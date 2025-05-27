@@ -532,4 +532,106 @@
 .title-emojis {
   -webkit-text-fill-color: initial;
   background: none;
+}
+
+/* Navigation Feature */
+.navigation-content {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.navigation-content.is-expanded {
+  height: auto;
+  padding: 0 24px 24px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation-code {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.navigation-code.is-expanded {
+  height: auto;
+  padding: 24px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Thumbnail Feature */
+.thumbnail-content {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.thumbnail-content.is-expanded {
+  height: auto;
+  padding: 0 24px 24px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.thumbnail-code, .thumbnail-css-code {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.thumbnail-code.is-expanded, .thumbnail-css-code.is-expanded {
+  height: auto;
+  padding: 24px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Postcards Feature */
+.postcards-content {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.postcards-content.is-expanded {
+  height: auto;
+  padding: 0 24px 24px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.postcards-code {
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.postcards-code.is-expanded {
+  height: auto;
+  padding: 24px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Remove the general feature-content and code-content styles */
+.feature-content, .code-content {
+  overflow: hidden;
+}
+
+.feature-content.is-expanded, .code-content.is-expanded {
+  overflow: visible;
 } 

@@ -6,6 +6,7 @@ import wcd2 from './wcd2.png';
 import wcdDesignOverview from './wcd_designoverview.png';
 import wcdDesignOverviewPortrait from './wcd_designoverviewportrait.png';
 import wcdExploration from './wcd_exploration.mp4';
+import { FaGithub } from 'react-icons/fa';
 
 const Project2Page = () => {
   const project = { 
@@ -451,7 +452,9 @@ body {
           </div>
           <div className="project-actions">
             <button className="live-demo">View Live Demo</button>
-            <button className="github">View on GitHub</button>
+            <a href="https://github.com/Tulpstoy/WcDonalds" target="_blank" rel="noopener noreferrer" className="github">
+              <FaGithub /> View on GitHub
+            </a>
           </div>
         </div>
       </div>

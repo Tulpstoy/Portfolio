@@ -193,12 +193,12 @@ function PokemonCard({ pokemon, formType = 'normal' }) {
             ))}
           </div>
           <div className="project-actions">
-            <button className="live-demo">
+            <a href="https://poketeamtrainer.micahbron.com/" target="_blank" rel="noopener noreferrer" className="live-demo">
               <FaExternalLinkAlt /> Live Demo
-            </button>
-            <button className="github">
+            </a>
+            <a href="https://github.com/Tulpstoy/PokeTrainerApp" target="_blank" rel="noopener noreferrer" className="github">
               <FaGithub /> View Code
-            </button>
+            </a>
           </div>
         </div>
       </header>

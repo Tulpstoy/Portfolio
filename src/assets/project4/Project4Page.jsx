@@ -307,12 +307,12 @@ const SwipeZone = styled.div\`
             ))}
           </div>
           <div className="project-actions">
-            <button className="live-demo">
+            <a href="https://stonewall-storybook.micahbron.com/" target="_blank" rel="noopener noreferrer" className="live-demo">
               <FaExternalLinkAlt /> Live Demo
-            </button>
-            <button className="github">
+            </a>
+            <a href="https://github.com/Tulpstoy/Stonewall-Storybook" target="_blank" rel="noopener noreferrer" className="github">
               <FaGithub /> View Code
-            </button>
+            </a>
           </div>
         </div>
       </header>

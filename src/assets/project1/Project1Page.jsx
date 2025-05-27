@@ -302,8 +302,8 @@ export default Postcards;`;
           ))}
         </div>
         <div className="project-actions">
-          <button className="live-demo">Live Demo</button>
-          <button className="github">Github</button>
+          <a href="http://dream-daddy-fan-project.micahbron.com/postcards" target="_blank" rel="noopener noreferrer" className="live-demo">Live Demo</a>
+          <a href="https://github.com/Tulpstoy/Dream-Daddy-Fan-App" target="_blank" rel="noopener noreferrer" className="github">Github</a>
         </div>
       </div>
 
