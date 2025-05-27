@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProjectCard.css';
-import Page1 from '../assets/Project1/Page1.png';
+import Page1 from '../assets/project1/Page1.png';
 import wcdDesignOverview from '../assets/project2/wcd_designoverview.png';
 import poke1 from '../assets/project3/poke1.png';
 import stonewall1 from '../assets/project4/stonewall1.png';
