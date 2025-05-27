@@ -14,21 +14,20 @@
 
 .project-image {
     width: 100%;
-    height: 200px;
-    background: #f8f8f8;
-    position: relative;
-    overflow: hidden;
+    background: #F5F5F5;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
 }
 
 .project-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    min-height: 250px;
+    max-height: 350px;
+    object-fit: fill;
+    display: block;
     transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-img {
-    transform: scale(1.05);
+    border-radius: var(--border-radius);
 }
 
 .image-placeholder {
