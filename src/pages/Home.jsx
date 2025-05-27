@@ -24,7 +24,7 @@ const Home = () => {
                         </div>
                         <div className="hero-text">
                             <h1>Hi, I'm Micah.</h1>
-                            <p>I'm a developer who values growing through challenges and learning from anyone and everyone.</p>
+                            <h3>I'm a developer who values growing through challenges and learning from anyone and everyone.</h3>
                             <Link to="/about" className="cta-button">Learn About Me</Link>
                         </div>
                     </div>

@@ -23,7 +23,7 @@ main {
 
 h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
-h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+h3 { font-size: 1.5rem; font-weight: 350; margin-bottom: 0.5rem; }
 h4 { font-size: 1.728rem	}
 h5 { font-size: 1.44rem}
 h6 { font-size: 1.2rem 	}
@@ -122,8 +122,8 @@ body {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     margin-bottom: 2rem;
     object-fit: cover;
@@ -137,7 +137,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin: 3rem 0;
 }
