@@ -1,0 +1,152 @@
+/* === Carousel Container === */
+.carousel-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  position: relative;
+}
+
+/* === Carousel Core === */
+.carousel {
+  position: relative;
+  width: 80vw;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  margin: 0 auto;
+}
+
+/* === Individual Cards === */
+.card-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform:
+    rotateY(calc(var(--offset) * 50deg))
+    scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--direction) * -5rem));
+  filter: blur(calc(var(--abs-offset) * 1rem));
+  transition: all 0.3s ease-out;
+  opacity: var(--opacity);
+  pointer-events: none;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.3s ease-out;
+  pointer-events: auto;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* === Navigation Buttons === */
+.nav {
+  color: #1F2937;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  background: white;
+  border: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav:hover {
+  background: #f1f1f1;
+}
+
+.nav:active {
+  transform: translateY(-50%) scale(0.95);
+  background: #e2e2e2;
+}
+
+.nav.left {
+  left: -2.5rem;
+}
+
+.nav.right {
+  right: -2.5rem;
+}
+
+/* === Description Card with Gradient Border === */
+.card-description-outer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #FF8C00, #FF0080, #40E0D0);
+  border-radius: 2rem;
+  padding: 6px;
+  width: 80vw;
+  max-width: 960px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.1); 
+}
+
+.card-description-inner {
+  background: white;
+  border-radius: 1.75rem;
+  padding: 1.25rem 2rem;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  animation: fadeInDesc 0.4s ease;
+  text-align: center; /* Move from .card-description */
+}
+
+.card-description {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+@keyframes fadeInDesc {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

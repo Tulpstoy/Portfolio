@@ -90,11 +90,6 @@
     transition: transform 0.2s ease;
 }
 
-.project-tag:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(255,142,83,0.2));
-}
-
 .clickable {
     cursor: pointer;
 }
