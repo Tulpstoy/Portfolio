@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Project1Page from "./assets/project1/Project1Page";
-import Project2Page from "./assets/project2/Project2Page";
+import Project2Page from "./pages/project_pages/wcdonalds";
 import Project3Page from "./assets/project3/Project3Page";
 import Project4Page from "./assets/project4/Project4Page";
 import StyleGuide from "./pages/StyleGuide";
