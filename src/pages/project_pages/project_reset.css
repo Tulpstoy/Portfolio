@@ -31,6 +31,7 @@ a {
   margin: 0 auto;
   padding: 2rem 1.5rem;
   overflow-x: hidden; /* ✅ Prevents horizontal overflow */
+  overflow-y: visible; /* ✅ Allows vertical overflow for carousel height */
 }
 
 
