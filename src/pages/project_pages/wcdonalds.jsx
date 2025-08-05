@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 
 import '../project_pages/project_reset.css';
 import './wcdonalds.css';
@@ -422,113 +421,96 @@ const responsiveGridCssCode = `/* Banner Styles */
 
 
   return (
-    <>
-      <Helmet>
-        <title>WcDonald's Website - Micah Bron Portfolio</title>
-        <meta name="description" content="A pixel-perfect implementation of a Figma design showcasing responsive design, interactive navigation, and modern CSS techniques including CSS Grid and Flexbox." />
-        <meta name="keywords" content="WcDonald's, responsive design, CSS Grid, Flexbox, HTML5, CSS3, JavaScript, Figma, mobile-first design, web development" />
-        <meta property="og:title" content="WcDonald's Website - Micah Bron Portfolio" />
-        <meta property="og:description" content="A pixel-perfect implementation of a Figma design showcasing responsive design and modern CSS techniques." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://micahbron.com/projects/2" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="WcDonald's Website - Micah Bron Portfolio" />
-        <meta name="twitter:description" content="A pixel-perfect implementation of a Figma design showcasing responsive design and modern CSS techniques." />
-      </Helmet>
-      <div className="project-page">
-        <ProjectHeader
-          title={project.plainTitle}
-          emojis={project.emojis}
-          category={project.category}
-          tags={[
-            "HTML5",
-            "CSS3",
-            "JavaScript",
-            "Responsive Design",
-            "Figma",
-            "Flexbox",
-            "CSS Grid",
-            "Mobile-First Design",
-            "UI Implementation",
-            "Web Accessibility",
-            "Vanilla JS",
-            "Design Systems"
-          ]}
-          liveLink="https://your-live-demo-link.com"
-          githubLink="https://github.com/Tulpstoy/WcDonalds"
-        />
+    <div className="project-page">
+      <ProjectHeader
+        title={project.plainTitle}
+        emojis={project.emojis}
+        category={project.category}
+        tags={[
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Responsive Design",
+          "Figma",
+          "Flexbox",
+          "CSS Grid",
+          "Mobile-First Design",
+          "UI Implementation",
+          "Web Accessibility",
+          "Vanilla JS",
+          "Design Systems"
+        ]}
+        liveLink="https://your-live-demo-link.com"
+        githubLink="https://github.com/Tulpstoy/WcDonalds"
+      />
 
-        <h2>Project Overview</h2>
-        <div className="project-description">
-          <p>
-            WcDonald's is a pixel-perfect implementation of a Figma design, showcasing my ability to translate
-            design specifications into clean, responsive code. The project demonstrates proficiency in HTML5,
-            CSS3, and JavaScript, with a strong focus on responsive design principles and mobile-first development.
-          </p>
-        </div>
+      <h2>Project Overview</h2>
+      <div className="project-description">
+        <p>
+          WcDonald's is a pixel-perfect implementation of a Figma design, showcasing my ability to translate
+          design specifications into clean, responsive code. The project demonstrates proficiency in HTML5,
+          CSS3, and JavaScript, with a strong focus on responsive design principles and mobile-first development.
+        </p>
+      </div>
 
-        <h2>Video Mockup</h2>
-        <div className="video-mockup-section">
-          <StudioVideoPlayer videoSrc={wcdExploration} />
-        </div>  
+      <h2>Video Mockup</h2>
+      <div className="video-mockup-section">
+        <StudioVideoPlayer videoSrc={wcdExploration} />
+      </div>  
 
-        <div className="features-section">
-          <h2>Notable Features</h2>
-          <div className="features-grid">
-            <FeatureCard
-              title="Responsive Design"
-              content="Implemented a fully responsive layout that adapts seamlessly across mobile, tablet, and desktop viewports. Used CSS Grid and Flexbox for modern layout techniques, with careful attention to breakpoints and fluid typography."
-              emoji="📱"
-            />
-            <FeatureCard
-              title="Interactive Navigation"
-              content="Created a responsive navigation system with smooth transitions and mobile-friendly hamburger menu. Implemented with vanilla JavaScript for optimal performance and accessibility."
-              emoji="🧭"
-            />
-          </div>
-        </div>
-
-        <h2>Design Implementation</h2>
-        <div className="mockup-section">
-          <ProjectImageCarousel
-            images={mockupImages}
-            descriptions={imageDescriptions}
+      <div className="features-section">
+        <h2>Notable Features</h2>
+        <div className="features-grid">
+          <FeatureCard
+            title="Responsive Design"
+            content="Implemented a fully responsive layout that adapts seamlessly across mobile, tablet, and desktop viewports. Used CSS Grid and Flexbox for modern layout techniques, with careful attention to breakpoints and fluid typography."
+            emoji="📱"
+          />
+          <FeatureCard
+            title="Interactive Navigation"
+            content="Created a responsive navigation system with smooth transitions and mobile-friendly hamburger menu. Implemented with vanilla JavaScript for optimal performance and accessibility."
+            emoji="🧭"
           />
         </div>
-
-        <h2>Code Snippets</h2>
-        <section className="code-snippets-section">
-          <div className="code-sections">
-            <CodeSnippet
-              title="Navigation System"
-              id="navigation"
-              code={navigationCode}
-              language="css"
-              activeSection={activeSection}
-              toggle={toggleCode}
-            />
-            <CodeSnippet
-              title="Responsive Grid Layout"
-              id="responsiveGrid"
-              code={responsiveGridCode}
-              language="css"
-              activeSection={activeSection}
-              toggle={toggleCode}
-            />
-            <CodeSnippet
-              title="Responsive Grid Styles"
-              id="responsiveGridCss"
-              code={responsiveGridCssCode}
-              language="css"
-              activeSection={activeSection}
-              toggle={toggleCode}
-            />
-          </div>
-        </section>
-
-        <ConnectSection />
       </div>
-    </>
+
+      <h2>Design Implementation</h2>
+      <div className="mockup-section">
+        <ProjectImageCarousel
+          images={mockupImages}
+          descriptions={imageDescriptions}
+        />
+      </div>
+
+      <h2>Code Snippets</h2>
+      <section className="code-snippets-section">
+        <div className="code-sections">
+          <CodeSnippet
+            title="Navigation System"
+            id="navigation"
+            code={navigationCode}
+            activeSection={activeSection}
+            toggle={toggleCode}
+          />
+          <CodeSnippet
+            title="Responsive Grid Layout"
+            id="responsiveGrid"
+            code={responsiveGridCode}
+            activeSection={activeSection}
+            toggle={toggleCode}
+          />
+          <CodeSnippet
+            title="Responsive Grid Styles"
+            id="responsiveGridCss"
+            code={responsiveGridCssCode}
+            activeSection={activeSection}
+            toggle={toggleCode}
+          />
+        </div>
+      </section>
+
+      <ConnectSection />
+    </div>
   );
 };
 

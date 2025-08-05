@@ -5,7 +5,7 @@
       "title": "Dream Daddy Fan App 🧔",
       "category": "Multi-Page React Project",
       "description": "This multi-page React fan app showcases my ability to build a navigable web experience using react-router and implement smooth, engaging animations. The centerpiece is an animated carousel featuring clickable thumbnail images of each dateable bachelor from Dream Daddy, replacing traditional navigation dots.",
-      "tags": ["Development"],
+      "tags": ["#Animations"],
       "imageUrl": "../assets/Project1/Page1.png"
     },
     {
@@ -13,7 +13,7 @@
       "title": "WcDonald's Website 🍔",
       "category": "Pixel-Perfect Design Implementation",
       "description": "A pixel-perfect implementation of a Figma design, showcasing my ability to translate design specifications into clean, responsive code. The project demonstrates proficiency in HTML5, CSS3, and JavaScript, with a strong focus on responsive design principles and mobile-first development.",
-      "tags": ["Design"],
+      "tags": ["#Figma"],
       "imageUrl": "../assets/project2/wcd_designoverview.png"
     },
     {
@@ -21,7 +21,7 @@
       "title": "PokeTeamPlanner 🎮",
       "category": "API Integration & Team Building",
       "description": "A fast, responsive Pokédex and team planning app built for both casual fans and competitive Pokémon players. Features include dynamic API integration, team building with type analysis, and detailed Pokémon data visualization. The final build is just 64 KB—making it lightweight without sacrificing features.",
-      "tags": ["Development"],
+      "tags": ["#API"],
       "imageUrl": "/placeholder.jpg"
     },
     {
@@ -29,7 +29,7 @@
       "title": "Stonewall Storybook 📚",
       "category": "Interactive Web Experience",
       "description": "An immersive, educational web experience that brings the historic Stonewall uprising to life through interactive storytelling and dynamic animations. This project combines historical accuracy with modern web technologies to create an engaging learning experience about this pivotal moment in LGBTQ+ history.",
-      "tags": ["Development"],
+      "tags": ["#Interactive Design"],
       "imageUrl": "../assets/project4/stonewall1.png"
     }
   ]
