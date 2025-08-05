@@ -1,4 +1,4 @@
-/* Send Footer to Bottom */
+Send Footer to Bottom
 html, body, #root {
     min-height: 100vh;
 }
@@ -159,44 +159,8 @@ body {
     background: #FFFFFF;
 }
 
-/* Connect Section */
-.connect-section {
-    padding: 4rem 0;
-    text-align: center;
-    background: var(--gradient-background);
-}
-
-/* Buttons */
-.cta-button, .email-button {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: transform 0.2s ease;
-}
-
-.cta-button {
-    background: #FF8C00;
-    color: white;
-}
-
-.email-button {
-    background: white;
-    color: var(--text-primary);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button:hover, .email-button:hover {
-    transform: translateY(-2px);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
     .container {
         padding: 0 1.5rem;
     }
