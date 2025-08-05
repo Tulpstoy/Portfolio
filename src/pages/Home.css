@@ -41,6 +41,19 @@
     gap: 1rem;
 }
 
+.pronouns {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    background: linear-gradient(135deg, #FF8C00, #FF0080, #40E0D0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    line-height: 1;
+    opacity: 0.8;
+}
+
 .hero-description {
     font-family: 'Roboto', sans-serif;
     font-size: 1.8rem;

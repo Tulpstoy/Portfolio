@@ -52,6 +52,7 @@ const About = () => {
                 </div>
                 <div className="header-text">
                   <h1 className="page-title">Hi, I'm Micah!</h1>
+                  <p className="pronouns">(he/him/his)</p>
                   <p className="page-subtitle">I'm just starting out in the world of web development, but I'm a quick learner and a team player and I'm always looking for new challenges.</p>
                   <div className="linkedin-blurb">
                     <a 

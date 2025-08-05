@@ -32,13 +32,14 @@ const OffTheClock = () => {
               </p>
             </div>
             <div className="header-polaroids right-polaroids">
-              <Polaroid id={1} isRandomPhoto={true} />
+              <Polaroid id={1} isRandomPhoto={true} isRightPolaroid={true} />
             </div>
           </div>
         </section>
 
         <section className="intro-section">
           <h2 className="section-title">Hi, I'm Micah! <span className="emoji">👋🏻</span></h2>
+          <p className="pronouns">(he/him/his)</p>
           <p>
             Beyond the code, I'm a queer young adult who loves reading, writing, and storytelling. I'm also a cat person and a gamer. I'm someone who believes that our personal interests and experiences 
             deeply influence how we approach problems and create solutions. Here's a glimpse into 

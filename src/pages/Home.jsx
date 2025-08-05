@@ -29,6 +29,7 @@ const Home = () => {
                         </div>
                         <div className="hero-text">
                             <h1 className="page-title">Hi, I'm Micah!</h1>
+                            <p className="pronouns">(he/him/his)</p>
                             <p className="hero-description">
                                 I'm a developer based in Vancouver, BC who loves the web and the people who use it. I'm a quick learner and a team player and I'm always looking for new challenges.
                             </p>

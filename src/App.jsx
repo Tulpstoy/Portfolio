@@ -23,12 +23,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/off-the-clock" element={<OffTheClock />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/1" element={<DreamDaddyFanApp />} />
-          <Route path="/projects/2" element={<Project2Page />} />
+          <Route path="/projects/1" element={<InvestTogether />} />
+          <Route path="/projects/2" element={<PokeAPIReactNativeApp />} />
           <Route path="/projects/3" element={<PokeAPIWebApp />} />
-          <Route path="/projects/4" element={<StonewallStorybook />} />
-          <Route path="/projects/5" element={<PokeAPIReactNativeApp />} />
-          <Route path="/projects/6" element={<InvestTogether />} />
+          <Route path="/projects/4" element={<Project2Page />} />
+          <Route path="/projects/5" element={<DreamDaddyFanApp />} />
+          <Route path="/projects/6" element={<StonewallStorybook />} />
           <Route path="/style" element={<StyleGuide />} />
         </Route>
       </Routes>

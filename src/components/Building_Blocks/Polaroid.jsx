@@ -33,10 +33,62 @@ import Photo27 from '../../assets/InstagramPhotos/photo27.jpg';
 import Photo28 from '../../assets/InstagramPhotos/photo28.jpg';
 import Photo29 from '../../assets/InstagramPhotos/photo29.jpg';
 
-
 import ProfileImage from '../../assets/SquarePortrait.jpg';
 
-const Polaroid = ({ id, photoIndex = null, className = "", isRandomPhoto = false }) => {
+// Create photos array from instagramPhotos data
+const photos = [Photo1, Photo2, Photo3, Photo4, Photo5, Photo6, Photo7, Photo8, Photo9, Photo10, Photo11, Photo12, Photo13, Photo14, Photo15, Photo16, Photo17, Photo18, Photo19, Photo20, Photo21, Photo22, Photo23, Photo24, Photo25, Photo26, Photo27, Photo28, Photo29];
+
+// Global tracking for photo selection across the entire page
+let rowPhotoIndex = 0;
+let selectedRowPhotoRange = [];
+let rightPolaroidPhotoIndex = null;
+
+// Function to initialize photo selection for the page
+const initializePhotoSelection = () => {
+  // For rows: Select 24 photos from the middle range (photos 3-26)
+  selectedRowPhotoRange = [];
+  for (let i = 3; i <= 26; i++) {
+    selectedRowPhotoRange.push(i);
+  }
+  
+  // Shuffle the row photo array
+  for (let i = selectedRowPhotoRange.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [selectedRowPhotoRange[i], selectedRowPhotoRange[j]] = [selectedRowPhotoRange[j], selectedRowPhotoRange[i]];
+  }
+  
+  // For right polaroid: Select one photo from the remaining 5 (photos 1, 2, 27, 28, 29)
+  const remainingPhotos = [1, 2, 27, 28, 29];
+  rightPolaroidPhotoIndex = remainingPhotos[Math.floor(Math.random() * remainingPhotos.length)];
+  
+  rowPhotoIndex = 0;
+};
+
+// Function to get the next photo index for rows
+const getNextRowPhotoIndex = () => {
+  // Initialize if not already done
+  if (selectedRowPhotoRange.length === 0) {
+    initializePhotoSelection();
+  }
+  
+  // Get the next photo index
+  const nextIndex = selectedRowPhotoRange[rowPhotoIndex];
+  rowPhotoIndex = (rowPhotoIndex + 1) % selectedRowPhotoRange.length;
+  
+  return nextIndex;
+};
+
+// Function to get the right polaroid photo index
+const getRightPolaroidPhotoIndex = () => {
+  // Initialize if not already done
+  if (rightPolaroidPhotoIndex === null) {
+    initializePhotoSelection();
+  }
+  
+  return rightPolaroidPhotoIndex;
+};
+
+const Polaroid = ({ id, photoIndex = null, className = "", isRandomPhoto = false, isRightPolaroid = false }) => {
   const { polaroids, instagramPhotos } = polaroidData;
   
   // Find the polaroid data by ID
@@ -44,17 +96,24 @@ const Polaroid = ({ id, photoIndex = null, className = "", isRandomPhoto = false
   const isPlaceholder = photoIndex === null || photoIndex >= instagramPhotos.length;
   const isProfile = polaroid.isProfile;
   
-  // Create photos array from instagramPhotos data
-  const photos = [Photo1, Photo2, Photo3, Photo4, Photo5, Photo6, Photo7, Photo8, Photo9, Photo10, Photo11, Photo12, Photo13, Photo14, Photo15, Photo16, Photo17, Photo18, Photo19, Photo20, Photo21, Photo22, Photo23, Photo24, Photo25, Photo26, Photo27, Photo28, Photo29];
-  
   // Get the Instagram photo data if using a photo
   const instagramPhoto = photoIndex !== null && photoIndex < instagramPhotos.length 
     ? instagramPhotos[photoIndex] 
     : null;
   
-  // For random photo selection, pick a random Instagram photo
-  const randomPhotoIndex = isRandomPhoto ? Math.floor(Math.random() * instagramPhotos.length) : null;
-  const randomPhoto = isRandomPhoto ? instagramPhotos[randomPhotoIndex] : null;
+  // For random photo selection, use different mechanisms for right polaroid vs rows
+  let finalPhotoIndex;
+  if (isRandomPhoto) {
+    if (isRightPolaroid) {
+      finalPhotoIndex = getRightPolaroidPhotoIndex();
+    } else {
+      finalPhotoIndex = getNextRowPhotoIndex();
+    }
+  } else {
+    finalPhotoIndex = photoIndex;
+  }
+  
+  const randomPhoto = isRandomPhoto ? instagramPhotos[finalPhotoIndex] : null;
   
   return (
     <div 
@@ -68,7 +127,7 @@ const Polaroid = ({ id, photoIndex = null, className = "", isRandomPhoto = false
         {isProfile ? (
           <img src={ProfileImage} alt="Micah Bron profile photo" />
         ) : isRandomPhoto ? (
-          <img src={photos[randomPhotoIndex]} alt={`Life moment ${randomPhotoIndex + 1}`} />
+          <img src={photos[finalPhotoIndex]} alt={`Life moment ${finalPhotoIndex + 1}`} />
         ) : isPlaceholder ? (
           <div className="placeholder-photo">
             <span className="placeholder-emoji">{polaroid.emoji}</span>
@@ -87,41 +146,14 @@ const Polaroid = ({ id, photoIndex = null, className = "", isRandomPhoto = false
   );
 };
 
-// Track used photo indices to prevent duplicates
-let usedPhotoIndices = new Set();
-
-// Function to get a random unused photo index
-const getRandomUnusedPhotoIndex = () => {
-  const availableIndices = [];
-  // Start from 1 to exclude the profile photo (ID 0)
-  for (let i = 1; i < 29; i++) {
-    if (!usedPhotoIndices.has(i)) {
-      availableIndices.push(i);
-    }
-  }
-  
-  // If all photos have been used, reset the set (excluding profile photo)
-  if (availableIndices.length === 0) {
-    usedPhotoIndices.clear();
-    for (let i = 1; i < 29; i++) {
-      availableIndices.push(i);
-    }
-  }
-  
-  const randomIndex = Math.floor(Math.random() * availableIndices.length);
-  const selectedIndex = availableIndices[randomIndex];
-  usedPhotoIndices.add(selectedIndex);
-  return selectedIndex;
-};
-
 // Function to create a row of 4 polaroids (used in OffTheClock page)
 export const createPolaroidRow = (startId, photoStartIndex = null) => {
   return (
     <div className="polaroid-row-container">
       {Array.from({ length: 4 }, (_, i) => {
         const currentId = startId + i;
-        // Use unique photo selection to prevent duplicates
-        const uniquePhotoIndex = getRandomUnusedPhotoIndex();
+        // Use row photo selection to prevent duplicates
+        const uniquePhotoIndex = getNextRowPhotoIndex();
         return (
           <Polaroid 
             key={currentId}
