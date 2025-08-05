@@ -5,12 +5,14 @@ import Page1 from '../assets/project1/Page1.png';
 import wcdDesignOverview from '../assets/project2/wcd_designoverview.png';
 import poke1 from '../assets/project3/poke1.png';
 import stonewall1 from '../assets/project4/stonewall1.png';
+import cardimage from '../assets/project5/cardimage.png';
+import investTogetherCard from '../assets/project6/cardimage.png';
 
 const ProjectCard = ({ project, onTagClick, showTags = true }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (project.id === 1 || project.id === 2 || project.id === 3 || project.id === 4) {
+    if (project.id === 1 || project.id === 2 || project.id === 3 || project.id === 4 || project.id === 5 || project.id === 6) {
       navigate(`/projects/${project.id}`);
     }
   };
@@ -21,18 +23,20 @@ const ProjectCard = ({ project, onTagClick, showTags = true }) => {
       case 2: return wcdDesignOverview;
       case 3: return poke1;
       case 4: return stonewall1;
+      case 5: return cardimage;
+      case 6: return investTogetherCard;
       default: return null;
     }
   };
 
   return (
     <div 
-      className={`project-card ${(project.id === 1 || project.id === 2 || project.id === 3 || project.id === 4) ? 'clickable' : ''}`} 
+      className={`project-card ${(project.id === 1 || project.id === 2 || project.id === 3 || project.id === 4 || project.id === 5 || project.id === 6) ? 'clickable' : ''}`} 
       onClick={handleClick}
-      style={{ cursor: (project.id <= 4) ? 'pointer' : 'default' }}
+      style={{ cursor: (project.id <= 6) ? 'pointer' : 'default' }}
     >
       <div className="project-image-container">
-        {project.id <= 4 ? (
+        {project.id <= 6 ? (
           <img src={getProjectImage()} alt={project.title} className="project-img" />
         ) : (
           <div className="image-placeholder"></div>

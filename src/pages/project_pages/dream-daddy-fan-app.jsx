@@ -10,6 +10,7 @@ import Page1 from '../../assets/project1/Page1.png';
 import Page2 from '../../assets/project1/Page2.png';
 import Page3 from '../../assets/project1/Page3.png';
 import Page4 from '../../assets/project1/Page4.png';
+import Page5 from '../../assets/project1/Page5.png';
 
 import ProjectHeader from '../../components/ProjectComponents/ProjectHeader';
 import FeatureCard from '../../components/ProjectComponents/FeatureCard';
@@ -25,11 +26,12 @@ const DreamDaddyFanApp = () => {
     category: "Multi-Page React Project"
   };
 
-  const mockupImages = [Page1, Page2, Page3, Page4];
+  const mockupImages = [Page1, Page2, Page3, Page4, Page5];
   const imageDescriptions = [
     "The home page, that displays a brief overview of what the game \"dream daddy\" is, and the ability to click a CTA button that takes you to the postcards page",
-    "Slideable navigation bar activated by hamburger menu button, with interactable X icon.",
     "Post cards carousel that display the end-game postcards, short bios about each bachelor and an animated thumbnail \"dot-array\"",
+    "Here's another example of the postcards carousel, with a different bachelor",
+    "Slideable navigation bar activated by hamburger menu button, with interactable X icon.",
     "An about the game page that explains what the game is and some core facts"
   ];
 

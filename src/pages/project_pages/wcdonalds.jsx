@@ -454,7 +454,6 @@ const responsiveGridCssCode = `/* Banner Styles */
             "Vanilla JS",
             "Design Systems"
           ]}
-          liveLink="https://your-live-demo-link.com"
           githubLink="https://github.com/Tulpstoy/WcDonalds"
         />
 

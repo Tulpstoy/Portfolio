@@ -10,6 +10,8 @@ import DreamDaddyFanApp from "./pages/project_pages/dream-daddy-fan-app";
 import Project2Page from "./pages/project_pages/wcdonalds";
 import PokeAPIWebApp from "./pages/project_pages/pokeapiwebapp";
 import StonewallStorybook from "./pages/project_pages/stonewall-storybook";
+import PokeAPIReactNativeApp from "./pages/project_pages/pokeapi_reactnativeapp";
+import InvestTogether from "./pages/project_pages/investtogether";
 import StyleGuide from "./pages/StyleGuide";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
           <Route path="/projects/2" element={<Project2Page />} />
           <Route path="/projects/3" element={<PokeAPIWebApp />} />
           <Route path="/projects/4" element={<StonewallStorybook />} />
+          <Route path="/projects/5" element={<PokeAPIReactNativeApp />} />
+          <Route path="/projects/6" element={<InvestTogether />} />
           <Route path="/style" element={<StyleGuide />} />
         </Route>
       </Routes>

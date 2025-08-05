@@ -98,6 +98,15 @@
     border-color: transparent;
 }
 
+.ux-research-tag {
+    background: linear-gradient(135deg, rgba(156,39,176,0.1), rgba(103,58,183,0.1));
+    border-color: rgba(156,39,176,0.3);
+}
+
+.ux-research-tag:hover {
+    border-color: transparent;
+}
+
 .default-tag {
     background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
     border-color: rgba(255,107,107,0.3);

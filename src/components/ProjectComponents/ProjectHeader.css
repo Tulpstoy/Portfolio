@@ -155,6 +155,16 @@
   border-color: transparent;
 }
 
+/* Figma button specific styling */
+.project-actions a.figma {
+  background: #f2f2f2;
+  color: #333;
+}
+
+.project-actions a.figma:hover {
+  color: white;
+}
+
 /* Responsive tweaks */
 @media (max-width: 600px) {
   .project-header-top {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaFigma } from 'react-icons/fa';
 import '../ProjectComponents/ProjectHeader.css';
 
-const ProjectHeader = ({ title, emojis, category, tags, liveLink, githubLink }) => (
+const ProjectHeader = ({ title, emojis, category, tags, liveLink, githubLink, figmaLink }) => (
   <div className="project-header">
     {/* New row layout: text on left, emoji on right */}
     <div className="project-header-top">
@@ -43,6 +43,16 @@ const ProjectHeader = ({ title, emojis, category, tags, liveLink, githubLink }) 
           className="github"
         >
           <FaGithub /> View on GitHub
+        </a>
+      )}
+      {figmaLink && (
+        <a
+          href={figmaLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="figma"
+        >
+          <FaFigma /> View in Figma
         </a>
       )}
     </div>
