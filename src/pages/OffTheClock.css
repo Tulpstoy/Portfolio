@@ -203,7 +203,8 @@
     line-height: 1;
     opacity: 0.8;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-top: -0.5rem;
+    transform: translateY(-1rem);
 }
 
 .section-title .emoji {
@@ -482,6 +483,25 @@
     .header-polaroids .polaroid-frame {
         max-width: 150px;
         min-width: 120px;
+        min-height: 180px;
+    }
+
+    .header-polaroids.left-polaroids .polaroid-frame {
+        transform: rotate(-12deg) !important;
+    }
+
+    .header-polaroids.left-polaroids .polaroid-frame:hover {
+        transform: scale(1.05) rotate(-15deg) !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-polaroids.right-polaroids .polaroid-frame {
+        transform: rotate(12deg) !important;
+    }
+
+    .header-polaroids.right-polaroids .polaroid-frame:hover {
+        transform: scale(1.05) rotate(15deg) !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
     .header-content {
@@ -644,6 +664,7 @@
     flex: 0 0 auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-origin: center center;
+    min-height: 240px;
 }
 
 .polaroid-row-container .polaroid-frame:nth-child(1) {
@@ -681,7 +702,7 @@
 
 .polaroid-row-container .polaroid-frame:nth-child(4):hover {
     --hover-rotation: 12deg;
-} 
+}
 
 /* Responsive styles for polaroid row container */
 @media (max-width: 768px) {
@@ -692,8 +713,45 @@
     }
 
     .polaroid-row-container .polaroid-frame {
-        max-width: 180px;
-        min-width: 160px;
+        max-width: 160px;
+        min-width: 140px;
+        min-height: 200px;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(1) {
+        transform: rotate(-8deg) !important;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(2) {
+        transform: rotate(4deg) !important;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(3) {
+        transform: rotate(-4deg) !important;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(4) {
+        transform: rotate(8deg) !important;
+    }
+
+    .polaroid-row-container .polaroid-frame:hover {
+        transform: scale(1.1) rotate(var(--hover-rotation)) !important;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(1):hover {
+        --hover-rotation: -12deg;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(2):hover {
+        --hover-rotation: 8deg;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(3):hover {
+        --hover-rotation: -8deg;
+    }
+
+    .polaroid-row-container .polaroid-frame:nth-child(4):hover {
+        --hover-rotation: 12deg;
     }
 }
 
@@ -701,10 +759,12 @@
     .polaroid-row-container {
         gap: 0.75rem;
         margin: 1rem 0;
+        padding: 0.25rem;
     }
 
     .polaroid-row-container .polaroid-frame {
-        max-width: 150px;
-        min-width: 130px;
+        max-width: 130px;
+        min-width: 110px;
+        min-height: 160px;
     }
 } 

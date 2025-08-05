@@ -20,6 +20,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.2;
 }
 
 .featured-projects h5 {
@@ -29,6 +32,9 @@
     position: relative;
     text-align: left;
     width: fit-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
 }
 
 .featured-projects .projects-grid {
@@ -44,13 +50,62 @@
 }
 
 @media (max-width: 768px) {
-    .featured-projects .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .featured-projects {
+        padding: 2rem 1.5rem;
+        margin: 2rem 0;
     }
 
+    .featured-projects h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .featured-projects h5 {
+        font-size: 1.3rem;
+        margin-top: -0.5rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .featured-projects .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .featured-projects .center-button {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
     .featured-projects {
-        padding: 3rem 3rem;
-        margin: 2rem 0;
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .featured-projects h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .featured-projects h5 {
+        font-size: 1.1rem;
+        margin-top: -0.25rem;
+        line-height: 1.4;
+    }
+
+    .featured-projects .projects-grid {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .featured-projects .center-button {
+        margin-top: 1rem;
     }
 }

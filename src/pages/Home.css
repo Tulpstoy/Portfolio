@@ -52,6 +52,8 @@
     margin: 0;
     line-height: 1;
     opacity: 0.8;
+    margin-top: -0.5rem;
+    transform: translateY(-2.5rem);
 }
 
 .hero-description {
@@ -77,6 +79,7 @@
     min-width: 180px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-origin: center center;
+    min-height: 220px;
 }
 
 .header-polaroids.left-polaroids .polaroid-frame {
@@ -132,10 +135,30 @@
     .header-polaroids .polaroid-frame {
         max-width: 150px;
         min-width: 120px;
+        min-height: 180px;
+        transform: rotate(0deg) !important;
+    }
+
+    .header-polaroids.left-polaroids .polaroid-frame,
+    .header-polaroids.right-polaroids .polaroid-frame {
+        transform: rotate(0deg) !important;
+    }
+
+    .header-polaroids.left-polaroids .polaroid-frame:hover,
+    .header-polaroids.right-polaroids .polaroid-frame:hover {
+        transform: scale(1.05) rotate(0deg) !important;
     }
 
     .button-group {
         gap: 1rem;
         margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-polaroids .polaroid-frame {
+        max-width: 120px;
+        min-width: 100px;
+        min-height: 150px;
     }
 } 

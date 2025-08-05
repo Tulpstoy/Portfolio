@@ -8,6 +8,9 @@
     position: relative;
     animation: none !important;
     transform-origin: center center;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
 }
 
 .polaroid-frame:hover {
@@ -22,6 +25,7 @@
     overflow: hidden;
     border-radius: 4px;
     margin-bottom: 15px;
+    flex-shrink: 0;
 }
 
 .polaroid-photo img {
@@ -69,6 +73,14 @@
     text-align: center;
     font-weight: 500;
     line-height: 1.3;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding: 0 5px;
 }
 
 /* Polaroid Grid Styles */
@@ -143,7 +155,8 @@
 
     .header-polaroids .polaroid-frame {
         max-width: 80px;
-        max-height: 80px;
+        min-height: 100px;
+        padding: 8px 8px 25px 8px;
     }
 
     .polaroid-grid {
@@ -153,14 +166,37 @@
 
     .polaroid-frame {
         padding: 10px 10px 30px 10px;
+        min-height: 160px;
     }
 
     .polaroid-label {
         font-size: 0.9rem;
+        line-height: 1.2;
+        padding: 0 3px;
     }
 
     .placeholder-emoji {
         font-size: 2rem;
+    }
+
+    /* Reduce rotation on mobile for better layout */
+    .left-polaroids .polaroid-frame,
+    .right-polaroids .polaroid-frame,
+    .header-polaroids.left-polaroids .polaroid-frame,
+    .header-polaroids.right-polaroids .polaroid-frame {
+        transform: rotate(0deg) !important;
+    }
+
+    .left-polaroids .polaroid-frame:first-child,
+    .left-polaroids .polaroid-frame:last-child {
+        transform: rotate(0deg) !important;
+    }
+
+    .left-polaroids .polaroid-frame:first-child:hover,
+    .left-polaroids .polaroid-frame:last-child:hover,
+    .header-polaroids.left-polaroids .polaroid-frame:hover,
+    .header-polaroids.right-polaroids .polaroid-frame:hover {
+        transform: scale(1.05) rotate(0deg) !important;
     }
 }
 
@@ -172,18 +208,26 @@
 
     .header-polaroids .polaroid-frame {
         max-width: 60px;
-        max-height: 60px;
+        min-height: 80px;
+        padding: 6px 6px 20px 6px;
     }
 
     .polaroid-frame {
         padding: 8px 8px 25px 8px;
+        min-height: 140px;
     }
 
     .polaroid-label {
         font-size: 0.8rem;
+        line-height: 1.1;
+        padding: 0 2px;
     }
 
     .placeholder-emoji {
         font-size: 1.5rem;
+    }
+
+    .polaroid-photo {
+        margin-bottom: 12px;
     }
 } 

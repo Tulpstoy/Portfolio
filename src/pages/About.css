@@ -39,6 +39,7 @@
     min-width: 180px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-origin: center center;
+    min-height: 220px;
 }
 
 .left-polaroids .polaroid-frame:first-child {
@@ -93,6 +94,8 @@
     margin: 0;
     line-height: 1;
     opacity: 0.8;
+    margin-top: -0.5rem;
+    transform: translateY(-2.5rem);
 }
 
 .page-subtitle {
@@ -495,6 +498,18 @@
     .hero-polaroids .polaroid-frame {
         max-width: 180px;
         min-width: 150px;
+        min-height: 180px;
+        transform: rotate(0deg) !important;
+    }
+
+    .left-polaroids .polaroid-frame:first-child,
+    .left-polaroids .polaroid-frame:last-child {
+        transform: rotate(0deg) !important;
+    }
+
+    .left-polaroids .polaroid-frame:first-child:hover,
+    .left-polaroids .polaroid-frame:last-child:hover {
+        transform: scale(1.05) rotate(0deg) !important;
     }
 
     .hero-text {
@@ -514,6 +529,12 @@
     .profile-polaroid-frame {
         max-width: 220px;
         min-width: 200px;
+        min-height: 200px;
+        transform: rotate(0deg) !important;
+    }
+
+    .profile-polaroid-frame:hover {
+        transform: scale(1.05) rotate(0deg) !important;
     }
 
     .about-content h1 {
@@ -783,6 +804,18 @@
     .header-polaroids .polaroid-frame {
         max-width: 200px;
         min-width: 180px;
+        min-height: 180px;
+        transform: rotate(0deg) !important;
+    }
+
+    .header-polaroids.left-polaroids .polaroid-frame,
+    .header-polaroids.right-polaroids .polaroid-frame {
+        transform: rotate(0deg) !important;
+    }
+
+    .header-polaroids.left-polaroids .polaroid-frame:hover,
+    .header-polaroids.right-polaroids .polaroid-frame:hover {
+        transform: scale(1.05) rotate(0deg) !important;
     }
 
     .header-text {
