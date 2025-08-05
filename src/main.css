@@ -21,58 +21,13 @@ main {
 
 /* Typography */
 
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.75rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-h5 {
-  font-size: 1.4rem;
-  font-weight: 400; 
-  color: var(--text-secondary);
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.25px;
-  line-height: 1.5;
-}
-
-
-h6 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-p {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-}
+h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 1rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+h3 { font-size: 1.5rem; font-weight: 350; margin-bottom: 0.5rem; }
+h4 { font-size: 1.728rem	}
+h5 { font-size: 1.44rem}
+h6 { font-size: 1.2rem 	}
+p { font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
 
 /* Grid System */
 .container {
@@ -159,6 +114,64 @@ body {
     background: #FFFFFF;
 }
 
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: var(--gradient-background);
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    object-fit: cover;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.project-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.project-category {
+    color: #FF8C00;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: #F5F5F5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
 /* Connect Section */
 .connect-section {
     padding: 4rem 0;
@@ -218,3 +231,4 @@ body {
     --spacing-unit: 1rem;
     --border-radius: 12px;
 }
+

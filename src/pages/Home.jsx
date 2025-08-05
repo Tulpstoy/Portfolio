@@ -1,17 +1,20 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import profileImage from "../assets/SquarePortrait.webp";
-import FeaturedProjects from "../global/FeaturedProjects";
+import ProjectCard from '../global/ProjectCard';
+import projectData from '../data/ProjectCards.json';
 import "./Home.css";
 
 const Home = () => {
+    const { projects } = projectData;
+
     // Add scroll to top effect at the beginning of the component
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     return (
-        <div className="page-container">
+        <div className="home">
             {/* Hero Section */}
             <section className="hero-section">
                 <div className="container">
@@ -28,8 +31,23 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Featured Projects Section */}
-            <FeaturedProjects />
+            {/* Projects Section */}
+            <section className="projects-section">
+                <div className="container">
+                    <h2>Featured Projects.</h2>
+                    <p>Here are some of my recent projects that showcase my skills and experience.</p>
+                    
+                    <div className="projects-grid">
+                        {projects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                    </div>
+
+                    <div className="center-button">
+                        <Link to="/projects" className="cta-button">More Projects</Link>
+                    </div>
+                </div>
+            </section>
 
             {/* Connect Section */}
             <section className="connect-section">

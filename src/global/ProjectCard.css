@@ -5,9 +5,6 @@
     box-shadow: 0 4px 16px rgba(31,38,135,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255,255,255,0.2);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
 .project-card:hover {
@@ -15,25 +12,22 @@
     box-shadow: 0 8px 24px rgba(31,38,135,0.15);
 }
 
-/* Image container using 16:9 ratio */
-.project-image-container {
-    width: calc(100% - 2rem); 
-    margin: 1rem auto 0 auto; 
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 16px;
-    background-color: #f5f5f5;
-    border: 1px solid rgba(0, 0, 0, 0.01);
+.project-image {
+    width: 100%;
+    background: #F5F5F5;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
 }
-
 
 .project-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
+    min-height: 250px;
+    max-height: 350px;
+    object-fit: fill;
     display: block;
     transition: transform 0.3s ease;
+    border-radius: var(--border-radius);
 }
 
 .image-placeholder {
@@ -48,43 +42,38 @@
 }
 
 .project-info {
-    padding: 1.5rem 1.5rem 2rem 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* <-- add this */
+    padding: 24px;
 }
 
-.project-card .project-category {
-    display: inline-block;
-    font-size: 1.1rem;
-    color: #FF8C00;
-    font-weight: 500;
-    margin-bottom: 0.75rem; 
+.project-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 8px;
 }
+
+.project-category {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #ff6b6b;
+    margin-bottom: 16px;
+}
+
 .project-description {
     color: #666;
-    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 24px;
 }
 
 .project-tags {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0.5rem;
-    margin-top: auto;
-    width: fit-content;
-    align-self: flex-start;
+    gap: 8px;
 }
-
 
 .project-tag {
     background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
     color: #666;
-    padding: 0.4rem 0.9rem;
+    padding: 6px 12px;
     border-radius: 16px;
     font-size: 0.9rem;
     transition: transform 0.2s ease;
@@ -92,11 +81,4 @@
 
 .clickable {
     cursor: pointer;
-}
-
-.project-info h3 {
-    font-size: 1.6rem;
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 0rem;
-}
+} 

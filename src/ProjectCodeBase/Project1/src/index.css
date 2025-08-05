@@ -1,0 +1,270 @@
+@font-face {
+  font-family: 'Tastysushi';
+  src: url('./assets/fonts/Tastysushi.ttf') format('truetype'); /* Correct path to the font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: 'Tastysushi', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #FFFFFF; /* White text */
+  background-color: #FF69B4; /* Dream Daddy pink */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+a {
+  font-weight: 500;
+  color: #FFFFFF; /* White links */
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #FFD1DC; /* Lighter pink for hover effect */
+}
+
+body {
+  font-family: 'Tastysushi', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FF69B4;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Limit the width for better readability */
+  margin: 0 auto;
+  margin-bottom: 3rem; /* Increase spacing below the slick slider */
+  padding: 1rem;
+  box-sizing: border-box;
+  padding-bottom: 2rem; /* Add padding at the bottom to prevent overflow */
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 300px; /* Ensure the textbox has a minimum width */
+  min-height: 150px; /* Ensure the textbox has a minimum height */
+  max-height: 300px; /* Ensure the textbox is not cut off */
+  overflow-y: auto; /* Add scroll if content exceeds max height */
+  resize: vertical; /* Allow resizing vertically */
+  margin-top: 2.5rem; /* Increase spacing above the textbox */
+  padding: 0.5rem;
+  box-sizing: border-box; /* Include padding and border in the element's total width/height */
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #FFFFFF; /* White text */
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #FFFFFF; /* White buttons */
+  color: #FF69B4; /* Dream Daddy pink text */
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+button:hover {
+  background-color: #FFD1DC; /* Lighter pink for hover effect */
+  color: #FFFFFF; /* White text */
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 20px; /* Adjust position to ensure visibility */
+  display: flex !important;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 10; /* Ensure dots are above other elements */
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #FFFFFF; /* White dots */
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.slick-dots button:hover,
+.slick-dots .slick-active button {
+  opacity: 1; /* Highlight active or hovered dots */
+  background-color: #FFD1DC; /* Lighter pink for active dots */
+}
+
+.home-banner {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.slider-wrapper {
+  grid-column: span 12;
+  margin-bottom: 1rem;
+}
+
+.postcard-img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postcard-img img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 450px;
+}
+
+/* Slick slider custom styles */
+.slick-prev,
+.slick-next {
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-container {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .postcard-img img {
+    max-height: 350px;
+  }
+}
+
+.test-image-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.test-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid System */
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.col-span-12 {
+  grid-column: span 12;
+}
+
+.col-span-6 {
+  grid-column: span 6;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
