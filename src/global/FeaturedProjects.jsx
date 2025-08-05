@@ -7,8 +7,8 @@ import './FeaturedProjects.css';
 const FeaturedProjects = () => {
     const { projects } = projectData;
 
-    // Pick 2 featured projects — you can adjust this logic as needed
-    const featuredProjects = projects.filter(project => [1, 2].includes(project.id));
+    // Pick 2 featured projects — PokeTeamPlanner and Invest Together
+    const featuredProjects = projects.filter(project => [1, 3].includes(project.id));
 
     return (
         <section className="projects-section featured-projects">

@@ -2,38 +2,14 @@
   "projects": [
     {
       "id": 1,
-      "title": "Dream Daddy Fan App 🧔",
-      "category": "Multi-Page React Project",
-      "description": "This multi-page React fan app showcases my ability to build a navigable web experience using react-router and implement smooth, engaging animations. The centerpiece is an animated carousel featuring clickable thumbnail images of each dateable bachelor from Dream Daddy, replacing traditional navigation dots.",
-      "tags": ["Development"],
-      "imageUrl": "../assets/Project1/Page1.png"
+      "title": "Invest Together 🎮",
+      "category": "Social Investment Platform",
+      "description": "A socially-driven investment experience for a new generation, winner of the DesCan UX Hackathon at Emily Carr University. Designed to make investing more approachable, Invest Together reimagines financial literacy as a team-based, seasonal game—blending social accountability with real-world growth.",
+      "tags": ["Design", "UX Research"],
+      "imageUrl": "../assets/project6/cardimage.png"
     },
     {
       "id": 2,
-      "title": "WcDonald's Website 🍔",
-      "category": "Pixel-Perfect Design Implementation",
-      "description": "A pixel-perfect implementation of a Figma design, showcasing my ability to translate design specifications into clean, responsive code. The project demonstrates proficiency in HTML5, CSS3, and JavaScript, with a strong focus on responsive design principles and mobile-first development.",
-      "tags": ["Design"],
-      "imageUrl": "../assets/project2/wcd_designoverview.png"
-    },
-    {
-      "id": 3,
-      "title": "PokeTeamPlanner 🎮",
-      "category": "API Integration & Team Building",
-      "description": "A fast, responsive Pokédex and team planning app built for both casual fans and competitive Pokémon players. Features include dynamic API integration, team building with type analysis, and detailed Pokémon data visualization. The final build is just 64 KB—making it lightweight without sacrificing features.",
-      "tags": ["Development"],
-      "imageUrl": "/placeholder.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Stonewall Storybook 📚",
-      "category": "Interactive Web Experience",
-      "description": "An immersive, educational web experience that brings the historic Stonewall uprising to life through interactive storytelling and dynamic animations. This project combines historical accuracy with modern web technologies to create an engaging learning experience about this pivotal moment in LGBTQ+ history.",
-      "tags": ["Development"],
-      "imageUrl": "../assets/project4/stonewall1.png"
-    },
-    {
-      "id": 5,
       "title": "PokeAPI React Native App 📱",
       "category": "React Native Mobile Development",
       "description": "A comprehensive React Native mobile application that integrates with the PokeAPI to provide users with a complete Pokemon experience. The app features an intuitive onboarding process, powerful search and filtering capabilities, detailed Pokemon information, team building tools, favorites management, and comprehensive debugging features for development and testing.",
@@ -41,12 +17,36 @@
       "imageUrl": "../assets/project5/cardimage.png"
     },
     {
+      "id": 3,
+      "title": "PokeTeamPlanner 🎮",
+      "category": "API Integration & Team Building",
+      "description": "A fast, responsive Pokédex and team planning app built for both casual fans and competitive Pokémon players. Features include dynamic API integration, team building with type analysis, and detailed Pokémon data visualization. The final build is just 64 KB—making it lightweight without sacrificing features.",
+      "tags": ["Development"],
+      "imageUrl": "../assets/project3/poke1.png"
+    },
+    {
+      "id": 4,
+      "title": "WcDonald's Website 🍔",
+      "category": "Pixel-Perfect Design Implementation",
+      "description": "A pixel-perfect implementation of a Figma design, showcasing my ability to translate design specifications into clean, responsive code. The project demonstrates proficiency in HTML5, CSS3, and JavaScript, with a strong focus on responsive design principles and mobile-first development.",
+      "tags": ["Design"],
+      "imageUrl": "../assets/project2/wcd_designoverview.png"
+    },
+    {
+      "id": 5,
+      "title": "Dream Daddy Fan App 🧔",
+      "category": "Multi-Page React Project",
+      "description": "This multi-page React fan app showcases my ability to build a navigable web experience using react-router and implement smooth, engaging animations. The centerpiece is an animated carousel featuring clickable thumbnail images of each dateable bachelor from Dream Daddy, replacing traditional navigation dots.",
+      "tags": ["Development"],
+      "imageUrl": "../assets/project1/Page1.png"
+    },
+    {
       "id": 6,
-      "title": "Invest Together 🎮",
-      "category": "Social Investment Platform",
-      "description": "A socially-driven investment experience for a new generation, winner of the DesCan UX Hackathon at Emily Carr University. Designed to make investing more approachable, Invest Together reimagines financial literacy as a team-based, seasonal game—blending social accountability with real-world growth.",
-      "tags": ["Design", "UX Research"],
-      "imageUrl": "../assets/project6/cardimage.png"
+      "title": "Stonewall Storybook 📚",
+      "category": "Interactive Web Experience",
+      "description": "An immersive, educational web experience that brings the historic Stonewall uprising to life through interactive storytelling and dynamic animations. This project combines historical accuracy with modern web technologies to create an engaging learning experience about this pivotal moment in LGBTQ+ history.",
+      "tags": ["Development"],
+      "imageUrl": "../assets/project4/stonewall1.png"
     }
   ]
 } 

@@ -12,10 +12,20 @@ const About = () => {
   }, []);
 
   const skills = {
-    programming: ['HTML', 'CSS', 'JavaScript', 'React.js', 'React Native', 'Tailwind', 'Bootstrap'],
-    design: ['Adobe Photoshop', 'Illustrator', 'InDesign', 'After Effects', 'Premier Pro', 'Audition', 'Dimension', 'Substance', 'Figma'],
-    cms: ['WordPress', 'Wix', 'Squarespace']
+    programming: [
+      'HTML', 'CSS', 'JavaScript', 'React.js', 'React Native', 
+      'Tailwind', 'Bootstrap', 'PHP', 'SQL', 
+      'Local Storage', 'REST APIs', 'Node.js'
+    ],
+    design: [
+      'Figma', 'Adobe Photoshop', 'Illustrator', 'InDesign', 
+      'After Effects', 'Premiere Pro', 'Audition', 
+      'Dimension', 'Substance 3D'
+    ],
+    cms: ['WordPress', 'Wix', 'Squarespace'],
+    other: ['Git & GitHub', 'PHPmyAdmin','Agile/Scrum', 'Jira', 'Trello', 'Slack', 'Microsoft Office', 'Google Workspace']
   };
+  
 
   return (
     <>
@@ -42,7 +52,7 @@ const About = () => {
                 </div>
                 <div className="header-text">
                   <h1 className="page-title">Hi, I'm Micah!</h1>
-                  <p className="page-subtitle">Discovering who I am beyond the code</p>
+                  <p className="page-subtitle">I'm just starting out in the world of web development, but I'm a quick learner and a team player and I'm always looking for new challenges.</p>
                   <div className="linkedin-blurb">
                     <a 
                       href="https://www.linkedin.com/in/micah-bron/" 
@@ -83,17 +93,61 @@ const About = () => {
           <div className="values-grid">
             <div className="value-card">
               <h3>Inclusivity</h3>
-              <p>When I say I value "inclusivity", it's not just a buzz-word. I genuinely mean it. As a member of the Queer/2SLGBTQIA+ community, I've seen the value of learning from people who are different than us. In the world of design and development, I also feel passionate about how to make the Web more inclusive to those with different abilities and disabilities.</p>
+              <p>When I say I value inclusivity, I mean it. As someone in the Queer/2SLGBTQIA+ community, I know firsthand how powerful it is to learn from people with different lived experiences. In design and development, that means building a Web that works for everyone — across all abilities and disabilities.</p>
             </div>
 
             <div className="value-card">
               <h3>Staying Curious</h3>
-              <p>To me, the act of staying curious enables me to feel passion about learning new skills and to hear stories from new people about new things. There is so much information out there in the world, and with us having limited time and energy, I want to make sure I pour my time and energy into things that enrich my life, my brain and my community.</p>
+              <p>Curiosity keeps me moving. It’s what drives me to pick up new skills, ask better questions, and connect with people from all kinds of backgrounds. There’s so much out there to learn — and I try to spend my energy on what challenges, excites, and grows me and my community.</p>
             </div>
 
             <div className="value-card">
               <h3>Learning How to Be Open</h3>
-              <p>As a kid, I sometimes got told I have a stubborn streak. There is absolutely something deeply beautiful about those who know what they like. But as I've gotten older, I've found the value of striving to be more open and to be open to learning things from people from all walks of life. I would love to say that I'm Open Minded. And I probably am. But I think more so I choose to be open as a conscious act every day. Learning from people from all walks of life has enabled me to learn new perspectives in new skills, and has kept my skills sharp in a variety of fields.</p>
+              <p>Yeah, I was a stubborn kid — and honestly, it still shows up sometimes. But over time, I’ve learned to choose openness. I don’t just aim to be open-minded; I practice it. Being open to new people, perspectives, and feedback has helped me grow across every part of my life and work.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="timeline-section">
+          <h2>Education & Career Timeline</h2>
+          <div className="timeline-grid">
+            <div className="timeline-card">
+              <div className="timeline-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                </svg>
+              </div>
+              <div className="timeline-content">
+                <h3>B.A. Interdisciplinary Studies</h3>
+                <p className="timeline-institution">Trinity Western University (Graduated 2022)</p>
+                <p className="timeline-description">Studied interdisciplinary courses galore. Ended with two minors in English and Special Education.</p>
+              </div>
+            </div>
+
+            <div className="timeline-card">
+              <div className="timeline-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                </svg>
+              </div>
+              <div className="timeline-content">
+                <h3>Youth Worker</h3>
+                <p className="timeline-institution">2021 - 2025</p>
+                <p className="timeline-description">Worked as a Youth Worker with 16-19 year olds who were displaced from homes of origin and needed a place to stay. Worked with clients to explore pathways forward.</p>
+              </div>
+            </div>
+
+            <div className="timeline-card">
+              <div className="timeline-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                </svg>
+              </div>
+              <div className="timeline-content">
+                <h3>New Media Design & Web Development</h3>
+                <p className="timeline-institution">BCIT (Expected December 2025)</p>
+                <p className="timeline-description">Currently studying Web Development and New Media Design.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -101,9 +155,9 @@ const About = () => {
         <section className="about-me-section">
           <h2>About Me</h2>
           <div className="about-card">
-            <p>Hi! I'm Micah, and I'm a Web Developer currently based in Vancouver, BC. I have a history in Social Services and bring that interest in serving communities to the world of Design and Development.</p>
-            <p>I love solving problems and learning anything and everything. One of my greatest joys is the feeling of figuring out a problem in code and seeing the results work in real-time. I've loved integrating solutions in HTML, CSS and JavaScript and am currently learning React and React Native. I always love learning new technologies to create dynamic (and often simple) solutions to seemingly complex problems.</p>
-            <p>In my free-time I enjoy writing and storytelling, and enjoy the feeling of completing works after putting in long periods of work. Indeed, the feeling of completing things after often hard journeys to their finish is something that drives me.</p>
+            <p>I studied Interdisciplinary Studies at Trinity Western University, a fairly conservative Christian school. As a queer person navigating that space, I learned a lot about critical thinking, creative resilience, and how to grow in environments that don’t always feel welcoming.</p>
+            <p>After graduation, I worked in youth programs and social services. Supporting people and communities brought a sense of spiritual fulfillment that still influences how I approach design and development today.</p>
+            <p>I decided to return to school to study Web Development at BCIT. I genuinely love solving problems. Even when they’re frustrating (which, let’s be honest, they usually are). There’s nothing quite like the moment when something finally works. Whether I’m debugging code or figuring out a more accessible user flow, I get a real kick out of seeing solutions come to life. Lately, I’ve noticed how often simple answers are the smartest ones.</p>
           </div>
         </section>
 
@@ -129,9 +183,12 @@ const About = () => {
             </div>
 
             <div className="skill-card">
-              <h3>Content Management Systems</h3>
+              <h3>Content Management Systems & Other</h3>
               <div className="skills-tags">
                 {skills.cms.map((skill, index) => (
+                  <span key={index} className="skill-tag">{skill}</span>
+                ))}
+                {skills.other.map((skill, index) => (
                   <span key={index} className="skill-tag">{skill}</span>
                 ))}
               </div>

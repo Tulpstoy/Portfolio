@@ -6,10 +6,10 @@ import './stonewall-storybook.css';
 
 import projectData from '../../data/ProjectCards.json';
 
-import stonewall1 from '../../assets/project4/stonewall1.png';
-import stonewall2 from '../../assets/project4/stonewall2.png';
-import stonewall3 from '../../assets/project4/stonewall3.png';
-import stonewall4 from '../../assets/project4/stonewall4.png';
+import page1 from '../../assets/project4/page1.png';
+import page2 from '../../assets/project4/page2.png';
+import page3 from '../../assets/project4/page3.png';
+import cardimage from '../../assets/project4/cardimage.png';
 
 import ProjectHeader from '../../components/ProjectComponents/ProjectHeader';
 import FeatureCard from '../../components/ProjectComponents/FeatureCard';
@@ -25,12 +25,11 @@ const StonewallStorybook = () => {
     category: "Interactive Web Experience"
   };
 
-  const mockupImages = [stonewall1, stonewall2, stonewall3, stonewall4];
+  const mockupImages = [page1, page2, page3];
   const imageDescriptions = [
     "Interactive timeline of the Stonewall Riots",
     "Marsha P. Johnson's story and legacy",
-    "The Brick-Throwing Myth interactive scene",
-    "Main menu and navigation interface"
+    "The Brick-Throwing Myth interactive scene"
   ];
 
   const [activeSection, setActiveSection] = useState(null);

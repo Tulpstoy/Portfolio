@@ -28,7 +28,7 @@ const OffTheClock = () => {
             <div className="hero-text">
               <h1 className="page-title">Off the Clock</h1>
               <p className="hero-description">
-                When I'm not coding, here's what I'm up to and how it shapes my approach to development.
+                When I'm not working on projects, here's what I'm up to.
               </p>
             </div>
             <div className="header-polaroids right-polaroids">
@@ -40,7 +40,7 @@ const OffTheClock = () => {
         <section className="intro-section">
           <h2 className="section-title">Hi, I'm Micah! <span className="emoji">👋🏻</span></h2>
           <p>
-            Beyond the code, I'm someone who believes that our personal interests and experiences 
+            Beyond the code, I'm a queer young adult who loves reading, writing, and storytelling. I'm also a cat person and a gamer. I'm someone who believes that our personal interests and experiences 
             deeply influence how we approach problems and create solutions. Here's a glimpse into 
             what drives me and how it connects to my development work.
           </p>
@@ -54,15 +54,15 @@ const OffTheClock = () => {
           <div className="values-grid">
             <div className="value-card">
               <h3 className="value-title">Authenticity</h3>
-              <p>I believe in being genuine in my work and relationships, creating experiences that reflect real needs and values.</p>
+              <p>I believe in being genuine in my work and relationships, creating experiences that reflect real needs and values. This often leads to silly playful moments or projects marred by perfectionism, depending on the day. I'm versatile in my approach and can do both approaches.</p>
             </div>
             <div className="value-card">
               <h3 className="value-title">Community</h3>
-              <p>I value building connections and supporting others, whether in development communities or personal relationships.</p>
+              <p>I value building connections and supporting others, whether in development communities or personal relationships. I love creating safe spaces for people to be themselves and to grow, and participating in safe communities. I love what happens when brains get together and create some cool stuff.</p>
             </div>
             <div className="value-card">
               <h3 className="value-title">Growth</h3>
-              <p>I'm always learning and evolving, both personally and professionally, embracing challenges as opportunities.</p>
+              <p>I'm always learning and evolving, both personally and professionally, embracing challenges as opportunities. If you didn't find the you of a year ago to be super cringe, are you even succeeding at life?</p>
             </div>
           </div>
         </section>
@@ -72,16 +72,12 @@ const OffTheClock = () => {
 
         <section className="writing-section">
           <h2 className="section-title"><span className="emoji">📚</span> Writer & Reader</h2>
-          <p>
-            I love to write and read. Whether it's creative writing, technical documentation, 
-            or diving into a good book, I find that storytelling and clear communication are 
-            essential skills in development. Every piece of code tells a story, and I believe 
-            in making that story accessible and engaging for users.
-          </p>
-          <p>
-            My reading spans from fiction to technical books, and I find that this diversity 
-            helps me think creatively about problem-solving and user experience design.
-          </p>
+            <p>
+            I write queer fiction and romance — the kinds of stories I wish I'd had growing up. Telling those stories now has been healing in ways I didn’t expect, and wildly fun in the best ways. As an adult, discovering that the limit doesn’t exist when it comes to whose stories get told has opened up a whole new creative world.
+            </p>
+            <p>
+            Reading and writing have both deeply shaped how I think, build, and create across disciplines. Whether I’m writing code, designing interfaces, or developing content, I always come back to storytelling — it’s at the heart of clarity, empathy, and good design.
+            </p>
         </section>
 
         {/* Polaroids between Writing and Sims */}
@@ -90,14 +86,12 @@ const OffTheClock = () => {
         <section className="sims-section">
           <h2 className="section-title"><span className="emoji">🎮</span> The Sims & My Journey</h2>
           <p>
-            I've been playing The Sims since I was a kid, and it's more than just a game to me. 
-            It's where I first learned about user interface design, user experience, and the 
-            importance of creating intuitive, enjoyable experiences for users.
+          Growing up, The Sims was more than just a game—it was a safe sandbox where I could explore, experiment, and create without judgment. 
+          It gave me space to tell stories, test ideas, and build whole worlds on my own terms.
           </p>
           <p>
-            The Sims taught me about building systems, managing complexity, and creating 
-            interfaces that feel natural and engaging. These lessons directly influence how 
-            I approach web development today.
+          Through The Sims, I naturally found my way into both storytelling and systems thinking—two things I’ve been consistently drawn back to as an adult. 
+          Whether I'm designing user interfaces or writing interactive narratives, the lessons I learned in that sandbox still guide my creative and development work today.
           </p>
         </section>
 
@@ -105,18 +99,18 @@ const OffTheClock = () => {
         {createPolaroidRow(14)}
 
         <section className="development-section">
-          <h2 className="section-title"><span className="emoji">💡</span> From Sims to Code</h2>
-          <p>
-            My journey from playing The Sims to becoming a developer wasn't a straight line, 
-            but it makes perfect sense to me. Both involve creating systems, solving problems, 
-            and thinking about how users interact with interfaces.
-          </p>
-          <p>
-            The attention to detail, the focus on user experience, and the joy of creating 
-            something that others can use and enjoy - these are the threads that connect my 
-            personal interests to my professional work.
-          </p>
-        </section>
+          <h2 className="section-title"><span className="emoji">💡</span> Designing with Empathy</h2>
+            <p>
+            Before I ever touched a line of code, I worked in social services—supporting youth, navigating complex systems, and learning how to listen deeply. 
+            I also grew up with a disabled sibling, and as a teenager, I wrestled with my own learning disabilities. These experiences shaped how I see the world—and how I build within it.
+            </p>
+            <p>
+            They’re what drew me to psychology, to systems thinking, and eventually to accessible design and development. 
+            I believe technology should meet people where they are—whether that means designing with empathy, simplifying complexity, 
+            or making sure no one is left out of the experience. For me, development isn’t just technical—it’s personal.
+            </p>
+</section>
+
 
         {/* Polaroids between Development and Cats */}
         {createPolaroidRow(18)}
@@ -124,10 +118,9 @@ const OffTheClock = () => {
         <section className="cats-section">
           <h2 className="section-title"><span className="emoji">🐱</span> My Furry Companions</h2>
           <p>
-            I have cats, and they're a constant reminder of the importance of patience, 
+            I have two fur babies, and they're a constant reminder of the importance of patience, 
             observation, and understanding different perspectives. They also provide excellent 
-            debugging companionship - there's nothing like explaining a problem to a cat to 
-            help you think through it clearly!
+            companionship during frustrating moments of debugging. Strongly recommend.
           </p>
         </section>
 

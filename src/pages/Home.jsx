@@ -30,17 +30,17 @@ const Home = () => {
                         <div className="hero-text">
                             <h1 className="page-title">Hi, I'm Micah!</h1>
                             <p className="hero-description">
-                                I'm a front-end developer based in Vancouver, BC. I create playful experiences that balance being well-structured and clean.
+                                I'm a developer based in Vancouver, BC who loves the web and the people who use it. I'm a quick learner and a team player and I'm always looking for new challenges.
                             </p>
                             <div className="button-group">
                                 <CTA_Button 
-                                    text="View My Work" 
-                                    link="/projects" 
+                                    text="Who I Am, Professionally" 
+                                    to="/about" 
                                     variant="primary"
                                 />
                                 <CTA_Button 
-                                    text="Learn More About Me" 
-                                    link="/about" 
+                                    text="Who I Am, Personally" 
+                                    to="/off-the-clock" 
                                     variant="secondary"
                                 />
                             </div>

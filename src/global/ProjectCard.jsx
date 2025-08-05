@@ -1,31 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProjectCard.css';
-import Page1 from '../assets/project1/Page1.png';
-import wcdDesignOverview from '../assets/project2/wcd_designoverview.png';
-import poke1 from '../assets/project3/poke1.png';
-import stonewall1 from '../assets/project4/stonewall1.png';
-import cardimage from '../assets/project5/cardimage.png';
-import investTogetherCard from '../assets/project6/cardimage.png';
 
 const ProjectCard = ({ project, onTagClick, showTags = true }) => {
   const navigate = useNavigate();
+  const [imageSrc, setImageSrc] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        // Dynamic import for the image based on project ID
+        let imageModule;
+        switch(project.id) {
+          case 1:
+            imageModule = await import('../assets/project6/cardimage.png');
+            break;
+          case 2:
+            imageModule = await import('../assets/project5/cardimage.png');
+            break;
+          case 3:
+            imageModule = await import('../assets/project3/cardimage.png');
+            break;
+          case 4:
+            imageModule = await import('../assets/project2/wcd_designoverview.png');
+            break;
+          case 5:
+            imageModule = await import('../assets/project1/Page1.png');
+            break;
+          case 6:
+            imageModule = await import('../assets/project4/cardimage.png');
+            break;
+          default:
+            setImageSrc(null);
+            return;
+        }
+        setImageSrc(imageModule.default);
+      } catch (error) {
+        console.error('Error loading image:', error);
+        setImageSrc(null);
+      }
+    };
+
+    if (project.id <= 6) {
+      loadImage();
+    }
+  }, [project.id]);
 
   const handleClick = () => {
     if (project.id === 1 || project.id === 2 || project.id === 3 || project.id === 4 || project.id === 5 || project.id === 6) {
       navigate(`/projects/${project.id}`);
-    }
-  };
-
-  const getProjectImage = () => {
-    switch(project.id) {
-      case 1: return Page1;
-      case 2: return wcdDesignOverview;
-      case 3: return poke1;
-      case 4: return stonewall1;
-      case 5: return cardimage;
-      case 6: return investTogetherCard;
-      default: return null;
     }
   };
 
@@ -36,8 +59,8 @@ const ProjectCard = ({ project, onTagClick, showTags = true }) => {
       style={{ cursor: (project.id <= 6) ? 'pointer' : 'default' }}
     >
       <div className="project-image-container">
-        {project.id <= 6 ? (
-          <img src={getProjectImage()} alt={project.title} className="project-img" />
+        {project.id <= 6 && imageSrc ? (
+          <img src={imageSrc} alt={project.title} className="project-img" />
         ) : (
           <div className="image-placeholder"></div>
         )}

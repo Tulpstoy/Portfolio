@@ -454,7 +454,7 @@ const PokemonCard = ({ pokemon, onPress, isFavorite, onFavoriteToggle }) => {
             "AsyncStorage",
             "Debug Tools"
           ]}
-          githubLink="https://github.com/Tulpstoy/PokeAPI-ReactNative"
+          githubLink="https://github.com/Tulpstoy/PokeTrainerApp-ReactNative"
         />
 
         <h2>Project Overview</h2>

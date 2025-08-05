@@ -6,8 +6,12 @@ import './pokeapiwebapp.css';
 
 import projectData from '../../data/ProjectCards.json';
 
-import poke1 from '../../assets/project3/poke1.png';
-import poke2 from '../../assets/project3/poke2.png';
+import page1 from '../../assets/project3/page1.png';
+import page2 from '../../assets/project3/page2.png';
+import page3 from '../../assets/project3/page3.png';
+import page4 from '../../assets/project3/page4.png';
+import page5 from '../../assets/project3/page5.png';
+import cardimage from '../../assets/project3/cardimage.png';
 
 import ProjectHeader from '../../components/ProjectComponents/ProjectHeader';
 import FeatureCard from '../../components/ProjectComponents/FeatureCard';
@@ -23,11 +27,18 @@ const PokeAPIWebApp = () => {
     category: "React Web Application"
   };
 
-  const mockupImages = [poke1, poke2];
+  const mockupImages = [page1, page2, page3, page4, page5];
   const imageDescriptions = [
-    "Main interface showing team builder with type analysis and Pokemon selection",
-    "Detailed view of a Pokemon's stats, moves, and type matchups"
+    "Main interface showing the Pokemon search and filtering functionality",
+    "Functionality to show only regional variants/forms of a Pokemon",
+    "Functionality to sort by generation that Pokemon was released in",
+    "Active Team View/Builder with some details on the Pokemon",
+    "Team Analysis Page with a breakdown of the team's type strengths and weaknesses, immunities, and uncovered types"
   ];
+
+  // Debug logging
+  console.log('Mockup Images:', mockupImages);
+  console.log('Image Descriptions:', imageDescriptions);
 
   const [activeSection, setActiveSection] = useState(null);
 

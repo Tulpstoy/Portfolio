@@ -42,7 +42,7 @@ const Projects = () => {
         <section className="projects-content">
           <div className="projects-intro">
             <h2>What I've Worked On.</h2>
-            <h5>I've built a range of front-end projects, with a focus on playful experiences that balance being well-structured and clean.</h5>
+            <h5>Here are some of the projects I've worked on. I'm always working on new things, so check back often!</h5>
           </div>
 
           <TagBar selectedTag={selectedTag} onTagClick={setSelectedTag} />
