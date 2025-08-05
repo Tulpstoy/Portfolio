@@ -1,0 +1,116 @@
+/* PokeAPI Web App Page Styles */
+
+.project-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.project-page h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 3rem 0 1.5rem 0;
+  background: linear-gradient(135deg, #FF8C00, #FF0080, #40E0D0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.project-description {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.project-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+  color: #555;
+}
+
+.project-description p:last-child {
+  margin-bottom: 0;
+}
+
+.features-section {
+  margin: 4rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mockup-section {
+  margin: 4rem 0;
+}
+
+.code-snippets-section {
+  margin: 4rem 0;
+}
+
+.code-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-page {
+    padding: 1rem;
+  }
+
+  .project-page h2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+  }
+
+  .project-description {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .project-description p {
+    font-size: 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mockup-section,
+  .code-snippets-section {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-page {
+    padding: 0.5rem;
+  }
+
+  .project-page h2 {
+    font-size: 1.75rem;
+  }
+
+  .project-description {
+    padding: 1rem;
+  }
+
+  .features-grid {
+    gap: 1rem;
+  }
+} 

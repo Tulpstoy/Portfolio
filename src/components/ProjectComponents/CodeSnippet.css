@@ -19,11 +19,57 @@
   background: #f0f0f0;
 }
 
+.code-title-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.code-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.language-indicator {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.language-indicator:hover {
+  transform: scale(1.05);
+}
+
 .code-toggle {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
+  font-size: 1.2rem;
+  color: #666;
+  transition: color 0.3s ease;
+  margin-left: 12px;
+}
+
+.code-toggle:hover {
+  color: #333;
+}
+
+.plus-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.plus-icon.is-active {
+  transform: rotate(45deg);
 }
 
 .code-content {
@@ -38,22 +84,50 @@
 }
 
 .code-content.is-expanded {
-  padding: 16px;
+  padding: 0;
   height: auto;
   opacity: 1;
   visibility: visible;
 }
 
-.code-content pre {
-  margin: 0;
-  padding: 16px;
-  background: #1e1e1e;
-  overflow-x: auto;
+/* Override syntax highlighter styles for better integration */
+.code-content .react-syntax-highlighter {
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
 
-.code-content code {
-  font-family: 'Fira Code', monospace;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #d4d4d4;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .code-header {
+    padding: 12px;
+  }
+  
+  .code-header h4 {
+    font-size: 1rem;
+  }
+  
+  .code-toggle {
+    font-size: 1.1rem;
+  }
+
+  .language-indicator {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+
+  .code-title-section {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .language-indicator {
+    align-self: flex-start;
+  }
 }

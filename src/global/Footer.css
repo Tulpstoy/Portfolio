@@ -50,6 +50,15 @@
     transition: all 0.3s ease;
     position: relative;
     padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
 }
 
 .social-links a::after {
@@ -80,7 +89,7 @@
 }
 
 .made-with::after {
-    content: '❤️';
+    content: '💙';
     position: relative;
     top: -1px;
     margin-left: 6px;

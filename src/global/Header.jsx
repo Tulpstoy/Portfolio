@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router';
 import logo from "../assets/TulpstoyLogo.svg";
 
 import "./Header.css";
@@ -12,6 +12,11 @@ function Header() {
         document.body.classList.toggle('menu-open');
     };
 
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+        document.body.classList.remove('menu-open');
+    };
+
     return (
         <header className="site-header">
             <div className="container">
@@ -22,9 +27,10 @@ function Header() {
                     </Link>
                     
                     <ul className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About Me</Link></li>
-                        <li><Link to="/projects">Projects</Link></li>
+                        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                        <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+                        <li><Link to="/about" onClick={closeMenu}>About Me</Link></li>
+                        <li><Link to="/off-the-clock" onClick={closeMenu}>Off the Clock</Link></li>
                     </ul>
 
                     <button 
