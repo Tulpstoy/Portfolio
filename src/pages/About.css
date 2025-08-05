@@ -270,6 +270,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-family: 'Tulpwriting', serif;
 }
 
 .skills-grid {
@@ -298,6 +299,7 @@
     font-weight: 600;
     margin: 0 0 1rem 0;
     color: #333;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .skills-tags {
@@ -536,7 +538,7 @@
 }
 
 .polaroid-label {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Tulpwriting', serif;
     font-size: 1.1rem;
     color: #333;
     text-align: center;

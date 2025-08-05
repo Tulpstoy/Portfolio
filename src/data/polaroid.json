@@ -2,8 +2,8 @@
   "polaroids": [
     {
       "id": 0,
-      "text": "Micah, circa. 2025",
-      "imagePath": "SquarePortrait.webp",
+      "text": "Micah, a portrait, colourized",
+      "imagePath": "SquarePortrait.jpg",
       "emoji": "👨‍🦱",
       "isProfile": true
     },
@@ -137,68 +137,176 @@
     {
       "id": 0,
       "path": "InstagramPhotos/photo1.jpeg",
-      "text": "Coffee shop vibes ☕",
-      "emoji": "☕"
+      "text": "Lost in Nature vibes",
+      "emoji": "🌿"
     },
     {
       "id": 1,
       "path": "InstagramPhotos/photo2.jpeg",
-      "text": "Vancouver sunset 🌅",
-      "emoji": "🌅"
+      "text": "Visiting the Chengdu Panda Park",
+      "emoji": "🐼"
     },
     {
       "id": 2,
       "path": "InstagramPhotos/photo3.jpg",
-      "text": "Hiking adventures 🏔️",
-      "emoji": "🏔️"
+      "text": "Love in Animal Crossing",
+      "emoji": "💖"
     },
     {
       "id": 3,
       "path": "InstagramPhotos/photo4.jpg",
-      "text": "Writing session ✍️",
-      "emoji": "✍️"
+      "text": "Graduation Day",
+      "emoji": "🎓"
     },
     {
       "id": 4,
       "path": "InstagramPhotos/photo5.jpg",
-      "text": "Cat cuddles 🐱",
-      "emoji": "🐱"
+      "text": "Bubble Tea Shop Selfie",
+      "emoji": "🥤"
     },
     {
       "id": 5,
       "path": "InstagramPhotos/photo6.jpg",
-      "text": "Book haul 📚",
-      "emoji": "📚"
+      "text": "It's Been a Long Time Coming...",
+      "emoji": "🎉"
     },
     {
       "id": 6,
       "path": "InstagramPhotos/photo7.jpg",
-      "text": "Queer community 🌈",
-      "emoji": "🌈"
+      "text": "Dance Awards Show",
+      "emoji": "💃"
     },
     {
       "id": 7,
       "path": "InstagramPhotos/photo8.jpg",
-      "text": "Nature walks 🌿",
-      "emoji": "🌿"
+      "text": "Ruin or Restauraunt?",
+      "emoji": "🤔"
     },
     {
       "id": 8,
       "path": "InstagramPhotos/photo9.jpg",
-      "text": "Creative space 🎨",
-      "emoji": "🎨"
+      "text": "Soft Autumn",
+      "emoji": "🍂"
     },
     {
       "id": 9,
       "path": "InstagramPhotos/photo10.jpg",
-      "text": "Local adventures 🚶‍♂️",
-      "emoji": "🚶‍♂️"
+      "text": "Family Photos",
+      "emoji": "�‍👩‍👧‍👦"
     },
     {
       "id": 10,
       "path": "InstagramPhotos/photo11.jpg",
-      "text": "Life moments ✨",
-      "emoji": "✨"
+      "text": "Farmer Bob",
+      "emoji": "🐑"
+    },
+    {
+      "id": 11,
+      "path": "InstagramPhotos/photo12.jpg",
+      "text": "Queer Community",
+      "emoji": "🌈"
+    },
+    {
+      "id": 12,
+      "path": "InstagramPhotos/photo13.jpg",
+      "text": "Gotta Make Everything Cute",
+      "emoji": "👀"
+    },
+    {
+      "id": 13,
+      "path": "InstagramPhotos/photo14.jpg",
+      "text": "Me and my Pokemon",
+      "emoji": "🐒"
+    },
+    {
+      "id": 14,
+      "path": "InstagramPhotos/photo15.jpg",
+      "text": "First Day of School",
+      "emoji": "🎒"
+    },
+    {
+      "id": 15,
+      "path": "InstagramPhotos/photo16.jpg",
+      "text": "Double Rainbows",
+      "emoji": "🌈"
+    },
+    {
+      "id": 16,
+      "path": "InstagramPhotos/photo17.jpg",
+      "text": "My Baby Momo",
+      "emoji": "🐱"
+    },
+    {
+      "id": 17,
+      "path": "InstagramPhotos/photo18.jpg",
+      "text": "Hummingbird in our Window",
+      "emoji": "🐦"
+    },
+    {
+      "id": 18,
+      "path": "InstagramPhotos/photo19.jpg",
+      "text": "Me and my Bae",
+      "emoji": "💖"
+    },
+    {
+      "id": 19,
+      "path": "InstagramPhotos/photo20.jpg",
+      "text": "Bubble in the Park",
+      "emoji": "🎈"
+    },
+    {
+      "id": 20,
+      "path": "InstagramPhotos/photo21.jpg",
+      "text": "Happy Pride",
+      "emoji": "🌈"
+    },
+    {
+      "id": 21,
+      "path": "InstagramPhotos/photo22.jpg",
+      "text": "My Big Baby Gormy",
+      "emoji": "🐱"
+    },
+    {
+      "id": 22,
+      "path": "InstagramPhotos/photo23.jpg",
+      "text": "Queer Faith Community",
+      "emoji": "🌈"
+    },
+    {
+      "id": 23,
+      "path": "InstagramPhotos/photo24.jpg",
+      "text": "Two Dudes in Chengdu",
+      "emoji": "🇨🇳"
+    },
+    {
+      "id": 24,
+      "path": "InstagramPhotos/photo25.jpg",
+      "text": "Reading Time",
+      "emoji": "📖"
+    },
+    {
+      "id": 25,
+      "path": "InstagramPhotos/photo26.jpg",
+      "text": "Pokemon in the Desert",
+      "emoji": "🐒"
+    },
+    {
+      "id": 26,
+      "path": "InstagramPhotos/photo27.jpg",
+      "text": "Star Wars in Concert",
+      "emoji": "🎤"
+    },
+    {
+      "id": 27,
+      "path": "InstagramPhotos/photo28.jpg",
+      "text": "This Book Rekt Me",
+      "emoji": "🤣"
+    },
+    {
+      "id": 28,
+      "path": "InstagramPhotos/photo29.jpg",
+      "text": "My Two Babies",
+      "emoji": "🐱"
     }
   ]
 } 

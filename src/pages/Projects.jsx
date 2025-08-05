@@ -4,6 +4,7 @@ import './Projects.css';
 import ProjectCard from '../global/ProjectCard';
 import projectData from '../data/ProjectCards.json';
 import TagBar from '../components/TagBar';
+import ConnectSection from '../components/ProjectComponents/ConnectSection';
 
 const Projects = () => {
   const { projects } = projectData;
@@ -26,7 +27,7 @@ const Projects = () => {
         <meta property="og:title" content="Projects - Micah Bron Portfolio" />
         <meta property="og:description" content="Explore my front-end projects showcasing playful experiences that balance being well-structured and clean." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vandertulp.com/projects" />
+        <meta property="og:url" content="https://micahbron.com/projects" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Projects - Micah Bron Portfolio" />
         <meta name="twitter:description" content="Explore my front-end projects showcasing playful experiences that balance being well-structured and clean." />
@@ -57,15 +58,7 @@ const Projects = () => {
           </div>
         </section>
 
-        <section className="connect-section">
-          <div className="connect-content">
-            <h2>Connect With Me.</h2>
-            <p>Let's work together to bring your ideas to life.</p>
-            <div className="email-container">
-              <span className="email">micah.bron@icloud.com</span>
-            </div>
-          </div>
-        </section>
+        <ConnectSection />
       </div>
     </>
   );

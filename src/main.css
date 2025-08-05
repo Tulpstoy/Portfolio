@@ -8,6 +8,15 @@ html, body, #root {
     flex-direction: column;
 }
 
+/* Custom Font */
+@font-face {
+    font-family: 'Tulpwriting';
+    src: url('./assets/fonts/Tulpwriting-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Helpers */
 
 .vertical-center {
@@ -22,6 +31,7 @@ main {
 /* Typography */
 
 h1 {
+  font-family: 'Tulpwriting', serif;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -31,6 +41,7 @@ h1 {
 }
 
 h2 {
+  font-family: 'Tulpwriting', serif;
   font-size: 2.25rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -38,6 +49,7 @@ h2 {
 }
 
 h3 {
+  font-family: 'Tulpwriting', serif;
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -45,6 +57,7 @@ h3 {
 }
 
 h4 {
+  font-family: 'Tulpwriting', serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -72,6 +85,36 @@ p {
   font-size: 1rem;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
+}
+
+/* Page Titles */
+.page-title {
+  font-family: 'Tulpwriting', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Titles */
+.section-title {
+  font-family: 'Tulpwriting', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+/* Value Titles */
+.value-title {
+  font-family: 'Tulpwriting', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
 }
 
 /* Grid System */

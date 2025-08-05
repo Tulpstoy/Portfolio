@@ -102,6 +102,17 @@
     font-weight: 500;
 }
 
+.handwritten-text {
+    font-family: 'Tulpwriting', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.roboto-text {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+}
+
 @media (max-width: 768px) {
     .site-footer {
         padding: 2.5rem 1rem;

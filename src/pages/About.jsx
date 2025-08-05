@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './About.css';
-import profileImage from '../assets/SquarePortrait.webp';
+import profileImage from '../assets/SquarePortrait.jpg';
 import Polaroid from '../components/Building_Blocks/Polaroid';
+import ConnectSection from '../components/ProjectComponents/ConnectSection';
 
 const About = () => {
   // Add scroll to top effect at the beginning of the component
@@ -78,7 +79,7 @@ const About = () => {
         </section>
 
         <section className="values-section">
-          <h2>My Core Values.</h2>
+          <h2>My Core Values</h2>
           <div className="values-grid">
             <div className="value-card">
               <h3>Inclusivity</h3>
@@ -98,7 +99,7 @@ const About = () => {
         </section>
 
         <section className="about-me-section">
-          <h2>About Me.</h2>
+          <h2>About Me</h2>
           <div className="about-card">
             <p>Hi! I'm Micah, and I'm a Web Developer currently based in Vancouver, BC. I have a history in Social Services and bring that interest in serving communities to the world of Design and Development.</p>
             <p>I love solving problems and learning anything and everything. One of my greatest joys is the feeling of figuring out a problem in code and seeing the results work in real-time. I've loved integrating solutions in HTML, CSS and JavaScript and am currently learning React and React Native. I always love learning new technologies to create dynamic (and often simple) solutions to seemingly complex problems.</p>
@@ -107,7 +108,7 @@ const About = () => {
         </section>
 
         <section className="skills-section">
-          <h2>My Skills.</h2>
+          <h2>My Skills</h2>
           <div className="skills-grid">
             <div className="skill-card">
               <h3>Programming Languages & Libraries</h3>
@@ -138,21 +139,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="connect-section">
-          <div className="connect-content">
-            <h2>Connect With Me.</h2>
-            <p>Let's work together to bring your ideas to life.</p>
-            <div className="email-container">
-              <a 
-                href="mailto:micah.bron@icloud.com" 
-                className="email"
-                aria-label="Send me an email"
-              >
-                micah.bron@icloud.com
-              </a>
-            </div>
-          </div>
-        </section>
+        <ConnectSection />
       </div>
     </>
   );

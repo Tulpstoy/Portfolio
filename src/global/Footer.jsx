@@ -6,7 +6,9 @@ const Footer = () => {
         <footer className="site-footer">
             <div className="footer-container">
                 <div className="footer-column">
-                    <p className="made-with">Hand-coded with TLC</p>
+                    <p className="made-with">
+                        <span className="handwritten-text">Hand-coded with TLC</span>
+                    </p>
                 </div>
                 
                 <div className="footer-column">
@@ -34,7 +36,9 @@ const Footer = () => {
                 </div>
                 
                 <div className="footer-column">
-                    <p className="copyright">© Micah Bron 2025</p>
+                    <p className="copyright">
+                        <span className="roboto-text">©</span> <span className="handwritten-text">Micah Bron</span> <span className="handwritten-text">twenty-twenty-five</span>
+                    </p>
                 </div>
             </div>
         </footer>

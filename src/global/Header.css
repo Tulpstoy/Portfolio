@@ -37,7 +37,8 @@
 
 .logo-text {
     color: white;
-    font-size: 1.4rem;
+    font-family: 'Tulpwriting', serif;
+    font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: -0.02em;
     position: relative;
@@ -46,7 +47,7 @@
 .logo-text::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 12px;
     left: 0;
     width: 0;
     height: 2px;

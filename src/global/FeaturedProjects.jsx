@@ -13,7 +13,7 @@ const FeaturedProjects = () => {
     return (
         <section className="projects-section featured-projects">
             <div className="container">
-                <h2>Featured Projects.</h2>
+                <h2>Featured Projects</h2>
                 <h5>Here are two projects that highlight my recent work and skills.</h5>
 
                 <div className="projects-grid">
