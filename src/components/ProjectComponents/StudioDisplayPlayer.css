@@ -11,18 +11,13 @@
 
 @media (max-width: 768px) {
   .video-display-wrapper {
-    width: 90%;
-    margin: 2rem auto;
+    margin: -8rem auto -8rem auto;
   }
+}
 
-  .studio-frame-svg {
-    width: 100%;
-  }
-
-  .video-inside-screen {
-    top: 24.8%;
-    left: 17.5%;
-    width: 65%;
+@media (max-width: 480px) {
+  .video-display-wrapper {
+    margin: -2.5rem auto -2.5rem auto;
   }
 }
 
