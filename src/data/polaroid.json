@@ -1,0 +1,204 @@
+{
+  "polaroids": [
+    {
+      "id": 0,
+      "text": "Micah, circa. 2025",
+      "imagePath": "SquarePortrait.webp",
+      "emoji": "👨‍🦱",
+      "isProfile": true
+    },
+    {
+      "id": 1,
+      "text": "Coffee shop vibes ☕",
+      "emoji": "☕"
+    },
+    {
+      "id": 2,
+      "text": "Vancouver sunset 🌅",
+      "emoji": "🌅"
+    },
+    {
+      "id": 3,
+      "text": "Hiking adventures 🏔️",
+      "emoji": "🏔️"
+    },
+    {
+      "id": 4,
+      "text": "Writing session ✍️",
+      "emoji": "✍️"
+    },
+    {
+      "id": 5,
+      "text": "Cat cuddles 🐱",
+      "emoji": "🐱"
+    },
+    {
+      "id": 6,
+      "text": "Book haul 📚",
+      "emoji": "📚"
+    },
+    {
+      "id": 7,
+      "text": "Queer community 🌈",
+      "emoji": "🌈"
+    },
+    {
+      "id": 8,
+      "text": "Nature walks 🌿",
+      "emoji": "🌿"
+    },
+    {
+      "id": 9,
+      "text": "Creative space 🎨",
+      "emoji": "🎨"
+    },
+    {
+      "id": 10,
+      "text": "Local adventures 🚶‍♂️",
+      "emoji": "🚶‍♂️"
+    },
+    {
+      "id": 11,
+      "text": "Life moments ✨",
+      "emoji": "✨"
+    },
+    {
+      "id": 12,
+      "text": "Reading time 📖",
+      "emoji": "📖"
+    },
+    {
+      "id": 13,
+      "text": "Writing flow ✍️",
+      "emoji": "✍️"
+    },
+    {
+      "id": 14,
+      "text": "Queer stories 🌈",
+      "emoji": "🌈"
+    },
+    {
+      "id": 15,
+      "text": "Sims memories 🏠",
+      "emoji": "🏠"
+    },
+    {
+      "id": 16,
+      "text": "Community building 👥",
+      "emoji": "👥"
+    },
+    {
+      "id": 17,
+      "text": "Creative coding 💻",
+      "emoji": "💻"
+    },
+    {
+      "id": 18,
+      "text": "Storytelling 📝",
+      "emoji": "📝"
+    },
+    {
+      "id": 19,
+      "text": "Digital worlds 🌐",
+      "emoji": "🌐"
+    },
+    {
+      "id": 20,
+      "text": "Furry friends 🐱",
+      "emoji": "🐱"
+    },
+    {
+      "id": 21,
+      "text": "Coding companions 💻",
+      "emoji": "💻"
+    },
+    {
+      "id": 22,
+      "text": "Authentic moments ✨",
+      "emoji": "✨"
+    },
+    {
+      "id": 23,
+      "text": "Community love ❤️",
+      "emoji": "❤️"
+    },
+    {
+      "id": 24,
+      "text": "Growth journey 🌱",
+      "emoji": "🌱"
+    },
+    {
+      "id": 25,
+      "text": "Life adventures 🚀",
+      "emoji": "🚀"
+    }
+  ],
+  "instagramPhotos": [
+    {
+      "id": 0,
+      "path": "InstagramPhotos/photo1.jpeg",
+      "text": "Coffee shop vibes ☕",
+      "emoji": "☕"
+    },
+    {
+      "id": 1,
+      "path": "InstagramPhotos/photo2.jpeg",
+      "text": "Vancouver sunset 🌅",
+      "emoji": "🌅"
+    },
+    {
+      "id": 2,
+      "path": "InstagramPhotos/photo3.jpg",
+      "text": "Hiking adventures 🏔️",
+      "emoji": "🏔️"
+    },
+    {
+      "id": 3,
+      "path": "InstagramPhotos/photo4.jpg",
+      "text": "Writing session ✍️",
+      "emoji": "✍️"
+    },
+    {
+      "id": 4,
+      "path": "InstagramPhotos/photo5.jpg",
+      "text": "Cat cuddles 🐱",
+      "emoji": "🐱"
+    },
+    {
+      "id": 5,
+      "path": "InstagramPhotos/photo6.jpg",
+      "text": "Book haul 📚",
+      "emoji": "📚"
+    },
+    {
+      "id": 6,
+      "path": "InstagramPhotos/photo7.jpg",
+      "text": "Queer community 🌈",
+      "emoji": "🌈"
+    },
+    {
+      "id": 7,
+      "path": "InstagramPhotos/photo8.jpg",
+      "text": "Nature walks 🌿",
+      "emoji": "🌿"
+    },
+    {
+      "id": 8,
+      "path": "InstagramPhotos/photo9.jpg",
+      "text": "Creative space 🎨",
+      "emoji": "🎨"
+    },
+    {
+      "id": 9,
+      "path": "InstagramPhotos/photo10.jpg",
+      "text": "Local adventures 🚶‍♂️",
+      "emoji": "🚶‍♂️"
+    },
+    {
+      "id": 10,
+      "path": "InstagramPhotos/photo11.jpg",
+      "text": "Life moments ✨",
+      "emoji": "✨"
+    }
+  ]
+} 

@@ -31,11 +31,50 @@
 .projects-intro h2 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
     text-align: left;
     width: fit-content;
     color: #333;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    padding: 0.5rem 0;
+    border-radius: 8px;
+    position: relative;
+}
+
+.projects-intro h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1), rgba(69, 183, 209, 0.1), rgba(150, 206, 180, 0.1), rgba(254, 202, 87, 0.1));
+    border-radius: 8px;
+    z-index: -1;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.projects-intro h2:hover::before {
+    transform: scale(1.1);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .projects-intro h5 {
@@ -45,6 +84,8 @@
     position: relative;
     text-align: left;
     width: fit-content;
+    color: #666;
+    line-height: 1.4;
 }
 
 /* Projects Grid */
@@ -56,43 +97,6 @@
     align-items: stretch;
 }
 
-/* Connect Section */
-.connect-section {
-    text-align: center;
-    padding: 60px;
-    background: linear-gradient(135deg, rgba(255,107,107,0.05), rgba(255,142,83,0.05));
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 32px;
-    margin-bottom: 48px;
-}
-
-.connect-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-    color: #333;
-}
-
-.connect-content p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 32px;
-}
-
-.email-container {
-    display: inline-block;
-    padding: 16px 32px;
-    background: white;
-    border-radius: 24px;
-    box-shadow: 0 4px 16px rgba(31,38,135,0.1);
-}
-
-.email {
-    color: #333;
-    font-size: 1.1rem;
-}
-
 @media (max-width: 768px) {
     .projects-hero h1 {
         font-size: 3rem;
@@ -100,17 +104,5 @@
 
     .projects-intro h2 {
         font-size: 2rem;
-    }
-
-    .connect-section {
-        padding: 40px 24px;
-    }
-
-    .connect-content h2 {
-        font-size: 2rem;
-    }
-
-    .email-container {
-        padding: 12px 24px;
     }
 }
