@@ -3,8 +3,8 @@ import './Polaroid.css';
 import polaroidData from '../../data/polaroid.json';
 
 // Import all photo assets
-import Photo1 from '../../assets/InstagramPhotos/photo1.jpeg';
-import Photo2 from '../../assets/InstagramPhotos/photo2.jpeg';
+import Photo1 from '../../assets/InstagramPhotos/photo1.jpg';
+import Photo2 from '../../assets/InstagramPhotos/photo2.jpg';
 import Photo3 from '../../assets/InstagramPhotos/photo3.jpg';
 import Photo4 from '../../assets/InstagramPhotos/photo4.jpg';
 import Photo5 from '../../assets/InstagramPhotos/photo5.jpg';

@@ -11,7 +11,7 @@ html, body, #root {
 /* Custom Font */
 @font-face {
     font-family: 'Tulpwriting';
-    src: url('./assets/fonts/Tulpwriting-Regular.ttf') format('truetype');
+    src: url('/src/assets/fonts/Tulpwriting-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 import PageWrap from "./global/PageWrap";
 import Header from "./global/Header";
 import Footer from "./global/Footer";
