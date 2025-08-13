@@ -1,5 +1,3 @@
-# 3075 - Portfolio 1 - React Boilerplate
+# My Portfolio Hehe
 
-This is a simple bare-bones template for a site that includes a few routes, component based pages, css imports, and a very simple grid system. 
-
-Use at your own risk! Could be fun tho.
+This is a personal project I've been working on throughout my last two terms at BCIT.
