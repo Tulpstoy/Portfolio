@@ -225,16 +225,36 @@
 }
 
 /* === Mobile Responsive Styles === */
+/* Size cards in vw so center + prev + next fit in viewport without being cut off */
 @media (max-width: 768px) {
   .mobile-carousel__list {
-    height: 1200px !important; /* Much taller for mobile displays */
-    min-height: 1200px !important; /* Ensure minimum height */
+    height: 95vw !important; /* ~240/533 aspect: card height in vw */
+    min-height: 95vw !important;
   }
 
   .mobile-carousel__item {
-    width: 220px;
-    height: 489px; /* Maintain 1080x2400 aspect ratio */
-    min-height: 489px; /* Ensure minimum height */
+    width: 36vw;
+    min-width: 36vw;
+    height: 80vw; /* 36 * (533/240) ≈ 80vw for 240:533 aspect */
+    min-height: 80vw;
+    max-height: 85vh;
+  }
+
+  /* Tighter offsets on mobile so all three cards stay visible */
+  .mobile-carousel__item[data-pos="-1"] {
+    transform: translateX(-28%) scale(0.9);
+  }
+
+  .mobile-carousel__item[data-pos="1"] {
+    transform: translateX(28%) scale(0.9);
+  }
+
+  .mobile-carousel__item[data-pos="-2"] {
+    transform: translateX(-52%) scale(0.8);
+  }
+
+  .mobile-carousel__item[data-pos="2"] {
+    transform: translateX(52%) scale(0.8);
   }
 
   .mobile-card-description-outer {
@@ -258,14 +278,33 @@
 
 @media (max-width: 480px) {
   .mobile-carousel__list {
-    height: 1000px !important; /* Much taller for mobile displays */
-    min-height: 1000px !important; /* Ensure minimum height */
+    height: 98vw !important;
+    min-height: 98vw !important;
   }
 
   .mobile-carousel__item {
-    width: 180px;
-    height: 400px; /* Maintain 1080x2400 aspect ratio */
-    min-height: 400px; /* Ensure minimum height */
+    width: 38vw;
+    min-width: 38vw;
+    height: 84vw;
+    min-height: 84vw;
+    max-height: 82vh;
+  }
+
+  /* Slightly tighter on very small screens */
+  .mobile-carousel__item[data-pos="-1"] {
+    transform: translateX(-26%) scale(0.9);
+  }
+
+  .mobile-carousel__item[data-pos="1"] {
+    transform: translateX(26%) scale(0.9);
+  }
+
+  .mobile-carousel__item[data-pos="-2"] {
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  .mobile-carousel__item[data-pos="2"] {
+    transform: translateX(50%) scale(0.8);
   }
 
   .mobile-card-description-outer {
