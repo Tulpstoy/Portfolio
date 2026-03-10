@@ -56,7 +56,7 @@
 .mobile-carousel__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Show full image without cropping (e.g. Get Started button) */
   border-radius: 12px;
 }
 
@@ -227,9 +227,19 @@
 /* === Mobile Responsive Styles === */
 /* Size cards in vw so center + prev + next fit in viewport without being cut off */
 @media (max-width: 768px) {
+  .mobile-carousel-wrapper {
+    min-height: 62lvh; /* overall carousel height on mobile */
+    margin-top: 0.5rem;   /* tighter gap above carousel (was 2rem) */
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-carousel {
+    min-height: 62lvh;
+  }
+
   .mobile-carousel__list {
-    height: 95vw !important; /* ~240/533 aspect: card height in vw */
-    min-height: 95vw !important;
+    height: 62lvh !important;      /* about 60–65% of viewport height */
+    min-height: 62lvh !important;
   }
 
   .mobile-carousel__item {
@@ -277,17 +287,27 @@
 }
 
 @media (max-width: 480px) {
+  .mobile-carousel-wrapper {
+    min-height: 62lvh;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .mobile-carousel {
+    min-height: 62lvh;
+  }
+
   .mobile-carousel__list {
-    height: 98vw !important;
-    min-height: 98vw !important;
+    height: 62lvh !important;
+    min-height: 62lvh !important;
   }
 
   .mobile-carousel__item {
     width: 38vw;
     min-width: 38vw;
-    height: 84vw;
+    height: 84vw;       /* keeps image aspect ratio (matches source) */
     min-height: 84vw;
-    max-height: 82vh;
+    max-height: 62lvh;
   }
 
   /* Slightly tighter on very small screens */

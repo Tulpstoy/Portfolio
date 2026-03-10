@@ -4,13 +4,13 @@ import '../ProjectComponents/ProjectHeader.css';
 
 const ProjectHeader = ({ title, emojis, category, tags, liveLink, githubLink, figmaLink }) => (
   <div className="project-header">
-    {/* New row layout: text on left, emoji on right */}
+    {/* Centered main title, emoji + subheading row beneath */}
     <div className="project-header-top">
-      <div className="project-title-section">
-        <h1 className="project-title gradient-text">{title}</h1>
+      <h1 className="project-title gradient-text">{title}</h1>
+      <div className="project-subrow">
+        <div className="title-emojis">{emojis}</div>
         <h3 className="project-category">{category}</h3>
       </div>
-      <div className="title-emojis">{emojis}</div>
     </div>
 
     {/* Skills */}
