@@ -20,7 +20,7 @@ import ConnectSection from '../../components/ProjectComponents/ConnectSection';
 
 const DreamDaddyFanApp = () => {
   const project = {
-    ...projectData.projects.find(p => p.id === 1),
+    ...projectData.projects.find(p => p.id === 5),
     plainTitle: "Dream Daddy Fan App",
     emojis: "🧔",
     category: "Multi-Page React Project"
@@ -40,10 +40,6 @@ const DreamDaddyFanApp = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const toggleFeature = (id) => {
-    setActiveSection(prev => prev === `feature-${id}` ? null : `feature-${id}`);
-  };
 
   const toggleCode = (id) => {
     setActiveSection(prev => prev === `code-${id}` ? null : `code-${id}`);

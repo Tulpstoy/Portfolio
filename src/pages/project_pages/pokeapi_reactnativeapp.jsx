@@ -25,13 +25,12 @@ import debugging3 from '../../assets/project5/section3-debugging3.png';
 import ProjectHeader from '../../components/ProjectComponents/ProjectHeader';
 import FeatureCard from '../../components/ProjectComponents/FeatureCard';
 import CodeSnippet from '../../components/ProjectComponents/CodeSnippet';
-import ProjectImageCarousel from '../../components/ProjectComponents/ProjectImageCarousel';
 import MobileCarousel from '../../components/ProjectComponents/MobileCarousel';
 import ConnectSection from '../../components/ProjectComponents/ConnectSection';
 
 const PokeAPIReactNativeAppPage = () => {
   const project = {
-    ...projectData.projects.find(p => p.id === 5),
+    ...projectData.projects.find(p => p.id === 2),
     plainTitle: "PokeAPI React Native App",
     emojis: "📱",
     category: "React Native Mobile Development"

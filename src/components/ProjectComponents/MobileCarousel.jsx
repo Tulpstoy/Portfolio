@@ -76,6 +76,24 @@ const MobileCarousel = ({ images, descriptions }) => {
     <>
       <div className="mobile-carousel-wrapper">
         <div className="mobile-carousel" ref={carouselRef}>
+          {/* Left/right arrows - visible on all viewports */}
+          <button
+            type="button"
+            className="mobile-carousel__nav mobile-carousel__nav--left"
+            onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+            aria-label="Previous slide"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            className="mobile-carousel__nav mobile-carousel__nav--right"
+            onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+            aria-label="Next slide"
+          >
+            ›
+          </button>
+
           <ul className="mobile-carousel__list">
             {images.map((image, index) => {
               const position = getPosition(index);
@@ -101,7 +119,7 @@ const MobileCarousel = ({ images, descriptions }) => {
           </ul>
         </div>
 
-        {/* Mobile indicators */}
+        {/* Dot indicators */}
         {isMobile && (
           <div className="mobile-carousel__indicators">
             {images.map((_, index) => (

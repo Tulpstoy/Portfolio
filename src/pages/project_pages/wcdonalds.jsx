@@ -21,7 +21,7 @@ import StudioVideoPlayer from '../../components/ProjectComponents/StudioDisplayP
 
 const Project2Page = () => {
   const project = {
-    ...projectData.projects.find(p => p.id === 2),
+    ...projectData.projects.find(p => p.id === 4),
     plainTitle: "WcDonald's Website",
     emojis: "🍔",
     category: "Pixel-Perfect Design Implementation"
@@ -40,10 +40,6 @@ const Project2Page = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const toggleFeature = (id) => {
-    setActiveSection(prev => prev === `feature-${id}` ? null : `feature-${id}`);
-  };
 
   const toggleCode = (id) => {
     setActiveSection(prev => prev === `code-${id}` ? null : `code-${id}`);

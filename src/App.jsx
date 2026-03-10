@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import PageWrap from "./global/PageWrap";
-import Header from "./global/Header";
-import Footer from "./global/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import OffTheClock from "./pages/OffTheClock";

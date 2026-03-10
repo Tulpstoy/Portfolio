@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import '../project_pages/project_reset.css';
@@ -27,7 +27,7 @@ import ConnectSection from '../../components/ProjectComponents/ConnectSection';
 
 const InvestTogetherPage = () => {
   const project = {
-    ...projectData.projects.find(p => p.id === 6),
+    ...projectData.projects.find(p => p.id === 1),
     plainTitle: "Invest Together",
     emojis: "🎮",
     category: "Social Investment Platform"
@@ -56,8 +56,6 @@ const InvestTogetherPage = () => {
     "Team History - Dive into their investment timeline and strategy",
     "Stock Breakdown (Apple) - View peer reviews, articles, and user-submitted analysis of specific stocks"
   ];
-
-  const [activeSection, setActiveSection] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);

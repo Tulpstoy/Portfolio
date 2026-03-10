@@ -100,30 +100,31 @@
   z-index: 3;
 }
 
-/* === Navigation Arrows === */
+/* === Navigation Arrows (inside bounds so not clipped by overflow-x: hidden) === */
 .mobile-carousel__nav {
   color: #1F2937;
-  font-size: 2rem;
+  font-size: 1.75rem;
   position: absolute;
   top: 50%;
-  z-index: 10;
+  z-index: 20;
   cursor: pointer;
   user-select: none;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border: none;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   transform: translateY(-50%);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   transition: background 0.2s ease, transform 0.2s ease;
+  pointer-events: auto;
 }
 
 .mobile-carousel__nav:hover {
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 1);
 }
 
 .mobile-carousel__nav:active {
@@ -132,11 +133,11 @@
 }
 
 .mobile-carousel__nav--left {
-  left: -2.5rem;
+  left: 0.5rem;
 }
 
 .mobile-carousel__nav--right {
-  right: -2.5rem;
+  right: 0.5rem;
 }
 
 /* === Mobile Indicators === */
@@ -234,10 +235,6 @@
     width: 220px;
     height: 489px; /* Maintain 1080x2400 aspect ratio */
     min-height: 489px; /* Ensure minimum height */
-  }
-
-  .mobile-carousel__nav {
-    display: none;
   }
 
   .mobile-card-description-outer {

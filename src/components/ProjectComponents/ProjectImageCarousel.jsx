@@ -69,6 +69,15 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
     setTouchEnd(null);
   };
 
+  // Position offset from active (like MobileCarousel): -2, -1, 0, 1, 2 with wrapping
+  const getPosition = (index) => {
+    let diff = index - active;
+    if (Math.abs(diff) > cardCount / 2) {
+      diff += diff > 0 ? -cardCount : cardCount;
+    }
+    return diff;
+  };
+
   const getStyleVars = (index) => {
     if (isMobile) {
       // Mobile: simple horizontal sliding
@@ -76,7 +85,7 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
       const direction = Math.sign(index - active);
       const isActive = index === active ? 1 : 0;
       const opacity = Math.abs(active - index) <= 1 ? 1 : 0.3;
-      
+
       return {
         '--offset': offset,
         '--direction': direction,
@@ -84,22 +93,9 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
         '--opacity': opacity,
         '--drag-offset': isDragging ? dragOffset : 0,
       };
-    } else {
-      // Desktop: 3D carousel effect
-      const offset = ((active - index) % cardCount) / 3;
-      const direction = Math.sign(active - index);
-      const absOffset = Math.abs(active - index) / 3;
-      const isActive = index === active ? 1 : 0;
-      const opacity = Math.abs(active - index) <= 1 ? 1 : 0;
-
-      return {
-        '--offset': offset,
-        '--direction': direction,
-        '--abs-offset': absOffset,
-        '--active': isActive,
-        '--opacity': opacity,
-      };
     }
+    // Desktop: stacked style (same as mobile carousel) — use data-pos for CSS
+    return {};
   };
 
   useEffect(() => {
@@ -125,6 +121,7 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
             className={`card-container ${isMobile ? 'mobile-card' : ''}`}
             key={index}
             style={getStyleVars(index)}
+            data-pos={isMobile ? undefined : getPosition(index)}
           >
             <div className="card">
               <img src={img} alt={`Slide ${index}`} className="card-img" />

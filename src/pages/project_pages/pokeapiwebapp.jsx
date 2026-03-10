@@ -11,7 +11,6 @@ import page2 from '../../assets/project3/page2.png';
 import page3 from '../../assets/project3/page3.png';
 import page4 from '../../assets/project3/page4.png';
 import page5 from '../../assets/project3/page5.png';
-import cardimage from '../../assets/project3/cardimage.png';
 
 import ProjectHeader from '../../components/ProjectComponents/ProjectHeader';
 import FeatureCard from '../../components/ProjectComponents/FeatureCard';
@@ -45,10 +44,6 @@ const PokeAPIWebApp = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const toggleFeature = (id) => {
-    setActiveSection(prev => prev === `feature-${id}` ? null : `feature-${id}`);
-  };
 
   const toggleCode = (id) => {
     setActiveSection(prev => prev === `code-${id}` ? null : `code-${id}`);
