@@ -9,7 +9,6 @@ import projectData from '../../data/ProjectCards.json';
 import page1 from '../../assets/project4/page1.png';
 import page2 from '../../assets/project4/page2.png';
 import page3 from '../../assets/project4/page3.png';
-import cardimage from '../../assets/project4/cardimage.png';
 
 import ProjectHeader from '../../components/ProjectComponents/ProjectHeader';
 import FeatureCard from '../../components/ProjectComponents/FeatureCard';
@@ -19,7 +18,7 @@ import ConnectSection from '../../components/ProjectComponents/ConnectSection';
 
 const StonewallStorybook = () => {
   const project = {
-    ...projectData.projects.find(p => p.id === 4),
+    ...projectData.projects.find(p => p.id === 6),
     plainTitle: "Stonewall Storybook",
     emojis: "🏳️‍🌈",
     category: "Interactive Web Experience"
@@ -37,10 +36,6 @@ const StonewallStorybook = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const toggleFeature = (id) => {
-    setActiveSection(prev => prev === `feature-${id}` ? null : `feature-${id}`);
-  };
 
   const toggleCode = (id) => {
     setActiveSection(prev => prev === `code-${id}` ? null : `code-${id}`);
