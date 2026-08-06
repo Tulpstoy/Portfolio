@@ -34,25 +34,25 @@
 }
 
 /* === Desktop: clean 3-card peek, no blur/grayscale === */
-.carousel:not(.mobile-carousel) .card-container[data-pos="0"] {
+.carousel:not(.carousel--mobile) .card-container[data-pos="0"] {
   z-index: 5;
   transform: scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 
-.carousel:not(.mobile-carousel) .card-container[data-pos="-1"],
-.carousel:not(.mobile-carousel) .card-container[data-pos="1"] {
+.carousel:not(.carousel--mobile) .card-container[data-pos="-1"],
+.carousel:not(.carousel--mobile) .card-container[data-pos="1"] {
   opacity: 0.5;
   z-index: 4;
   pointer-events: auto;
 }
 
-.carousel:not(.mobile-carousel) .card-container[data-pos="-1"] {
+.carousel:not(.carousel--mobile) .card-container[data-pos="-1"] {
   transform: translateX(-58%) scale(0.82) rotate(-3deg);
 }
 
-.carousel:not(.mobile-carousel) .card-container[data-pos="1"] {
+.carousel:not(.carousel--mobile) .card-container[data-pos="1"] {
   transform: translateX(58%) scale(0.82) rotate(3deg);
 }
 
@@ -75,6 +75,7 @@
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  cursor: pointer;
 }
 
 /* === Navigation Buttons === */
@@ -171,7 +172,7 @@
 }
 
 /* === Mobile Carousel Styles === */
-.mobile-carousel {
+.carousel--mobile {
   width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 9;
@@ -298,5 +299,157 @@
   .mobile-indicators {
     margin-top: 1rem;
     gap: 0.4rem;
+  }
+}
+
+/* === Lightbox Modal === */
+.image-carousel-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(38, 34, 41, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.image-carousel-modal-content {
+  background: white;
+  border: 1.5px solid var(--ink, #262229);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 rgba(38, 34, 41, 0.24);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideIn 0.25s ease-out;
+}
+
+.image-carousel-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  color: var(--ink, #262229);
+  border: 1.5px solid var(--ink, #262229);
+  border-radius: 999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0 rgba(38, 34, 41, 0.16);
+  transition: transform 0.15s ease;
+}
+
+.image-carousel-modal-close:hover {
+  transform: translate(-2px, -2px);
+}
+
+.image-carousel-modal-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.image-carousel-modal-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.image-carousel-modal-description {
+  padding: 1.25rem 1.5rem;
+  background: var(--paper, #FAF6EE);
+  border-top: 1.5px solid var(--ink, #262229);
+}
+
+.image-carousel-modal-description p {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink, #262229);
+  text-align: center;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.94) translateY(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-carousel-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .image-carousel-modal-image {
+    max-height: 60vh;
+  }
+
+  .image-carousel-modal-description {
+    padding: 1rem;
+  }
+
+  .image-carousel-modal-description p {
+    font-size: 0.88rem;
+  }
+
+  .image-carousel-modal-close {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1.25rem;
+    top: 0.6rem;
+    right: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-carousel-modal-overlay {
+    padding: 0.5rem;
+  }
+
+  .image-carousel-modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+  }
+
+  .image-carousel-modal-image {
+    max-height: 50vh;
+  }
+
+  .image-carousel-modal-description {
+    padding: 0.75rem;
+  }
+
+  .image-carousel-modal-description p {
+    font-size: 0.82rem;
   }
 }

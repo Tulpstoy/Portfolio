@@ -1,5 +1,6 @@
 // MobileCarousel.jsx
 import React, { useState, useEffect, useRef } from 'react';
+import ThoughtBubble from './ThoughtBubble';
 import './MobileCarousel.css';
 
 const MobileCarousel = ({ images, descriptions }) => {
@@ -9,6 +10,10 @@ const MobileCarousel = ({ images, descriptions }) => {
   const [modalImage, setModalImage] = useState(null);
   const [modalDescription, setModalDescription] = useState('');
   const [touchStart, setTouchStart] = useState(null);
+  const [isHovering, setIsHovering] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [mouseX, setMouseX] = useState(0);
+  const [mouseY, setMouseY] = useState(0);
   const carouselRef = useRef(null);
 
   // Detect mobile device
@@ -46,6 +51,13 @@ const MobileCarousel = ({ images, descriptions }) => {
       prevSlide();
     }
     setTouchStart(null);
+  };
+
+  const handleMouseMove = (e) => {
+    if (isMobile || !carouselRef.current) return;
+    const rect = carouselRef.current.getBoundingClientRect();
+    setMouseX(e.clientX - rect.left);
+    setMouseY(e.clientY - rect.top);
   };
 
   // Keyboard navigation
@@ -99,6 +111,9 @@ const MobileCarousel = ({ images, descriptions }) => {
           ref={carouselRef}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => !isMobile && setIsHovering(true)}
+          onMouseLeave={() => { setIsHovering(false); setHoveredIndex(null); }}
         >
           {/* Left/right arrows - hidden on the smallest screens where swipe takes over */}
           <button
@@ -126,11 +141,12 @@ const MobileCarousel = ({ images, descriptions }) => {
             {images.map((image, index) => {
               const position = getPosition(index);
               return (
-                <li 
+                <li
                   key={index}
                   className="mobile-carousel__item"
                   data-pos={position}
                   onClick={() => setActiveIndex(index)}
+                  onMouseEnter={() => !isMobile && setHoveredIndex(index)}
                 >
                   <img 
                     src={image} 
@@ -145,6 +161,16 @@ const MobileCarousel = ({ images, descriptions }) => {
               );
             })}
           </ul>
+
+          {!isMobile && (
+            <ThoughtBubble
+              text={descriptions[hoveredIndex !== null ? hoveredIndex : activeIndex]}
+              containerRef={carouselRef}
+              mouseX={mouseX}
+              mouseY={mouseY}
+              isHovering={isHovering}
+            />
+          )}
         </div>
 
         {/* Dot indicators */}
@@ -160,12 +186,14 @@ const MobileCarousel = ({ images, descriptions }) => {
           </div>
         )}
 
-        {/* Description Box */}
-        <div className="mobile-card-description-outer">
-          <div className="mobile-card-description-inner">
-            <p className="mobile-card-description">{descriptions[activeIndex]}</p>
+        {/* Static caption on mobile - no hover to trigger the desktop bubble */}
+        {isMobile && (
+          <div className="mobile-caption">
+            <div className="thought-bubble">
+              <p className="thought-bubble__text">{descriptions[activeIndex]}</p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Modal */}
