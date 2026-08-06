@@ -14,11 +14,9 @@
 .mobile-carousel {
   display: flex;
   width: 100%;
-  height: 100%;
   align-items: center;
   justify-content: center;
   position: relative;
-  font-family: Arial;
 }
 
 /* === Carousel List === */
@@ -27,11 +25,9 @@
   list-style: none;
   position: relative;
   width: 100%;
-  height: 800px; /* Increased height to accommodate larger images */
-  min-height: 800px; /* Ensure minimum height */
+  height: 600px;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
   margin: 0;
   padding: 0;
 }
@@ -41,174 +37,160 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 240px; /* Reduced width to fit container */
-  height: 533px; /* Reduced height for 1080x2400 aspect ratio */
-  border-radius: 12px;
-  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  width: 220px;
+  height: 489px;
+  border-radius: 22px;
   position: absolute;
-  transition: all 0.3s ease-in;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.35s ease;
   cursor: pointer;
-  overflow: hidden;
   background: white;
-  min-height: 533px; /* Ensure minimum height */
+  border: 1.5px solid var(--ink, #262229);
+  box-shadow: 5px 5px 0 rgba(38, 34, 41, 0.16);
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.mobile-carousel__image {
+.mobile-carousel__item img.mobile-carousel__image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Show full image without cropping (e.g. Get Started button) */
-  border-radius: 12px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
 }
 
-/* === Position-based Styling === */
+/* === Position-based Styling: clean 3-card peek, no blur/grayscale === */
+.mobile-carousel__item {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .mobile-carousel__item[data-pos="0"] {
   z-index: 5;
-  transform: scale(1);
+  transform: translateX(0) scale(1);
   opacity: 1;
-  filter: none;
+  pointer-events: auto;
 }
 
 .mobile-carousel__item[data-pos="-1"],
 .mobile-carousel__item[data-pos="1"] {
-  opacity: 0.7;
-  filter: blur(1px) grayscale(10%);
+  opacity: 0.55;
+  pointer-events: auto;
+  z-index: 4;
 }
 
 .mobile-carousel__item[data-pos="-1"] {
-  transform: translateX(-40%) scale(0.9);
-  z-index: 4;
+  transform: translateX(-78%) scale(0.84) rotate(-4deg);
 }
 
 .mobile-carousel__item[data-pos="1"] {
-  transform: translateX(40%) scale(0.9);
-  z-index: 4;
+  transform: translateX(78%) scale(0.84) rotate(4deg);
 }
 
-.mobile-carousel__item[data-pos="-2"],
-.mobile-carousel__item[data-pos="2"] {
-  opacity: 0.4;
-  filter: blur(3px) grayscale(20%);
-}
-
-.mobile-carousel__item[data-pos="-2"] {
-  transform: translateX(-70%) scale(0.8);
-  z-index: 3;
-}
-
-.mobile-carousel__item[data-pos="2"] {
-  transform: translateX(70%) scale(0.8);
-  z-index: 3;
-}
-
-/* === Navigation Arrows (inside bounds so not clipped by overflow-x: hidden) === */
+/* === Navigation Arrows === */
 .mobile-carousel__nav {
-  color: #1F2937;
-  font-size: 1.75rem;
+  color: var(--ink, #262229);
   position: absolute;
   top: 50%;
   z-index: 20;
   cursor: pointer;
   user-select: none;
-  background: rgba(255, 255, 255, 0.95);
-  border: none;
-  width: 2.75rem;
-  height: 2.75rem;
+  background: white;
+  border: 1.5px solid var(--ink, #262229);
+  width: 3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 999px;
   transform: translateY(-50%);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 3px 3px 0 rgba(38, 34, 41, 0.16);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   pointer-events: auto;
 }
 
+.mobile-carousel__nav svg {
+  width: 20px;
+  height: 20px;
+}
+
 .mobile-carousel__nav:hover {
-  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(38, 34, 41, 0.2);
 }
 
 .mobile-carousel__nav:active {
-  transform: translateY(-50%) scale(0.95);
-  background: #e2e2e2;
+  transform: translateY(-50%);
+  box-shadow: 1px 1px 0 rgba(38, 34, 41, 0.2);
 }
 
 .mobile-carousel__nav--left {
-  left: 0.5rem;
+  left: -0.5rem;
 }
 
 .mobile-carousel__nav--right {
-  right: 0.5rem;
+  right: -0.5rem;
 }
 
-/* === Mobile Indicators === */
+/* === Dash Indicators === */
 .mobile-carousel__indicators {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  margin: 1rem 0;
-  padding: 0.5rem;
-  position: relative;
-  z-index: 10;
+  margin: 1.5rem 0 0;
+  padding: 0;
 }
 
 .mobile-carousel__indicator {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  background: white;
+  border: 1.5px solid var(--ink, #262229);
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .mobile-carousel__indicator--active {
-  background-color: #FF8C00;
-  transform: scale(1.2);
-  box-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
+  width: 22px;
+  background: var(--flamingo, #FF0080);
+  border-color: var(--ink, #262229);
 }
 
-.mobile-carousel__indicator:hover {
-  background-color: rgba(255, 140, 0, 0.6);
-  transform: scale(1.1);
-}
-
-/* === Description Card with Gradient Border === */
+/* === Description Card === */
 .mobile-card-description-outer {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
-  background: linear-gradient(90deg, #FF8C00, #FF0080, #40E0D0);
-  border-radius: 2rem;
-  padding: 6px;
-  width: 80vw;
-  max-width: 600px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.1); 
+  margin-top: 1.75rem;
+  width: 100%;
 }
 
 .mobile-card-description-inner {
   background: white;
-  border-radius: 1.75rem;
-  padding: 1.25rem 2rem;
+  border: 1.5px solid var(--ink, #262229);
+  border-radius: 18px;
+  box-shadow: 4px 4px 0 rgba(38, 34, 41, 0.14);
+  padding: 1.1rem 1.75rem;
   width: 100%;
-  min-height: 100px;
+  max-width: 560px;
+  min-height: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  animation: fadeInDesc 0.4s ease;
+  animation: fadeInDesc 0.3s ease;
   text-align: center;
+  position: relative;
 }
 
 .mobile-card-description {
   margin: 0;
-  font-size: 1.15rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
   font-weight: 400;
-  font-style: italic;
-  color: #333;
-  line-height: 1.6;
+  color: var(--ink, #262229);
+  line-height: 1.55;
   max-width: 100%;
   word-break: break-word;
 }
@@ -216,7 +198,7 @@
 @keyframes fadeInDesc {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -225,76 +207,10 @@
 }
 
 /* === Mobile Responsive Styles === */
-/* Size cards in vw so center + prev + next fit in viewport without being cut off */
 @media (max-width: 768px) {
   .mobile-carousel-wrapper {
-    min-height: 62lvh; /* overall carousel height on mobile */
-    margin-top: 0.5rem;   /* tighter gap above carousel (was 2rem) */
-    margin-bottom: 1.5rem;
-  }
-
-  .mobile-carousel {
-    min-height: 62lvh;
-  }
-
-  .mobile-carousel__list {
-    height: 62lvh !important;      /* about 60–65% of viewport height */
-    min-height: 62lvh !important;
-  }
-
-  .mobile-carousel__item {
-    width: 36vw;
-    min-width: 36vw;
-    height: 80vw; /* 36 * (533/240) ≈ 80vw for 240:533 aspect */
-    min-height: 80vw;
-    max-height: 85vh;
-  }
-
-  /* Tighter offsets on mobile so all three cards stay visible */
-  .mobile-carousel__item[data-pos="-1"] {
-    transform: translateX(-28%) scale(0.9);
-  }
-
-  .mobile-carousel__item[data-pos="1"] {
-    transform: translateX(28%) scale(0.9);
-  }
-
-  .mobile-carousel__item[data-pos="-2"] {
-    transform: translateX(-52%) scale(0.8);
-  }
-
-  .mobile-carousel__item[data-pos="2"] {
-    transform: translateX(52%) scale(0.8);
-  }
-
-  .mobile-card-description-outer {
-    width: 90vw;
-    max-width: 90vw;
-    margin-top: 1rem;
-    padding: 4px;
-  }
-
-  .mobile-card-description-inner {
-    padding: 1rem 1.25rem;
-    min-height: 80px;
-  }
-
-  .mobile-card-description {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .mobile-carousel-wrapper {
-    min-height: 62lvh;
     margin-top: 0.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .mobile-carousel {
-    min-height: 62lvh;
+    margin-bottom: 1.5rem;
   }
 
   .mobile-carousel__list {
@@ -303,55 +219,101 @@
   }
 
   .mobile-carousel__item {
-    width: 38vw;
-    min-width: 38vw;
-    height: 84vw;       /* keeps image aspect ratio (matches source) */
-    min-height: 84vw;
-    max-height: 62lvh;
+    width: 46vw;
+    min-width: 46vw;
+    height: 80vw;
+    min-height: 80vw;
+    max-height: 85vh;
+    border-radius: 18px;
+    padding: 7px;
   }
 
-  /* Slightly tighter on very small screens */
+  .mobile-carousel__item img.mobile-carousel__image {
+    border-radius: 11px;
+  }
+
   .mobile-carousel__item[data-pos="-1"] {
-    transform: translateX(-26%) scale(0.9);
+    transform: translateX(-62%) scale(0.86) rotate(-3deg);
   }
 
   .mobile-carousel__item[data-pos="1"] {
-    transform: translateX(26%) scale(0.9);
+    transform: translateX(62%) scale(0.86) rotate(3deg);
   }
 
-  .mobile-carousel__item[data-pos="-2"] {
-    transform: translateX(-50%) scale(0.8);
+  .mobile-carousel__nav {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
-  .mobile-carousel__item[data-pos="2"] {
-    transform: translateX(50%) scale(0.8);
+  .mobile-carousel__nav svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .mobile-carousel__nav--left {
+    left: 0.25rem;
+  }
+
+  .mobile-carousel__nav--right {
+    right: 0.25rem;
   }
 
   .mobile-card-description-outer {
-    width: 95vw;
-    max-width: 95vw;
-    margin-top: 0.75rem;
-    padding: 3px;
+    margin-top: 1.25rem;
   }
 
   .mobile-card-description-inner {
-    padding: 0.75rem 1rem;
-    min-height: 70px;
+    padding: 0.9rem 1.25rem;
+    min-height: 76px;
   }
 
   .mobile-card-description {
     font-size: 0.9rem;
-    line-height: 1.3;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-carousel-wrapper {
+    margin-bottom: 1.25rem;
+  }
+
+  .mobile-carousel__list {
+    height: 58lvh !important;
+    min-height: 58lvh !important;
+  }
+
+  .mobile-carousel__item {
+    width: 50vw;
+    min-width: 50vw;
+    height: 84vw;
+    min-height: 84vw;
+  }
+
+  .mobile-carousel__item[data-pos="-1"] {
+    transform: translateX(-58%) scale(0.82) rotate(-3deg);
+  }
+
+  .mobile-carousel__item[data-pos="1"] {
+    transform: translateX(58%) scale(0.82) rotate(3deg);
+  }
+
+  .mobile-carousel__nav {
+    display: none;
+  }
+
+  .mobile-card-description-inner {
+    padding: 0.75rem 1rem;
+    min-height: 68px;
+  }
+
+  .mobile-card-description {
+    font-size: 0.85rem;
   }
 
   .mobile-carousel__indicators {
-    margin: 0.75rem 0;
+    margin-top: 1rem;
     gap: 0.4rem;
-  }
-
-  .mobile-carousel__indicator {
-    width: 6px;
-    height: 6px;
   }
 }
 
@@ -362,48 +324,52 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(38, 34, 41, 0.72);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   padding: 1rem;
-  animation: modalFadeIn 0.3s ease-out;
+  animation: modalFadeIn 0.25s ease-out;
 }
 
 .mobile-carousel-modal-content {
   background: white;
-  border-radius: 1rem;
+  border: 1.5px solid var(--ink, #262229);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 rgba(38, 34, 41, 0.24);
   max-width: 90vw;
   max-height: 90vh;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
-  animation: modalSlideIn 0.3s ease-out;
+  animation: modalSlideIn 0.25s ease-out;
 }
 
 .mobile-carousel-modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  border-radius: 50%;
+  background: white;
+  color: var(--ink, #262229);
+  border: 1.5px solid var(--ink, #262229);
+  border-radius: 999px;
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.5rem;
+  line-height: 1;
   cursor: pointer;
   z-index: 1001;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease;
+  box-shadow: 3px 3px 0 rgba(38, 34, 41, 0.16);
+  transition: transform 0.15s ease;
 }
 
 .mobile-carousel-modal-close:hover {
-  background: rgba(0, 0, 0, 0.9);
+  transform: translate(-2px, -2px);
 }
 
 .mobile-carousel-modal-image-container {
@@ -411,7 +377,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.25rem;
   overflow: hidden;
 }
 
@@ -419,36 +385,32 @@
   max-width: 100%;
   max-height: 70vh;
   object-fit: contain;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
 }
 
 .mobile-carousel-modal-description {
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  padding: 1.25rem 1.5rem;
+  background: var(--paper, #FAF6EE);
+  border-top: 1.5px solid var(--ink, #262229);
 }
 
 .mobile-carousel-modal-description p {
   margin: 0;
-  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
   line-height: 1.5;
-  color: #333;
+  color: var(--ink, #262229);
   text-align: center;
 }
 
 @keyframes modalFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes modalSlideIn {
   from {
-    transform: scale(0.9) translateY(-20px);
+    transform: scale(0.94) translateY(-12px);
     opacity: 0;
   }
   to {
@@ -457,7 +419,6 @@
   }
 }
 
-/* Mobile responsive modal styles */
 @media (max-width: 768px) {
   .mobile-carousel-modal-content {
     max-width: 95vw;
@@ -473,15 +434,15 @@
   }
 
   .mobile-carousel-modal-description p {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .mobile-carousel-modal-close {
-    width: 2rem;
-    height: 2rem;
+    width: 2.1rem;
+    height: 2.1rem;
     font-size: 1.25rem;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.6rem;
+    right: 0.6rem;
   }
 }
 
@@ -504,6 +465,6 @@
   }
 
   .mobile-carousel-modal-description p {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
-} 
+}

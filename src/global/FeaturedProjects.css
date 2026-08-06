@@ -41,13 +41,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     margin-top: 2.5rem;
 }
 
 .featured-projects .center-button {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3.5rem;
 }
 
 @media (max-width: 768px) {
@@ -75,11 +75,11 @@
     .featured-projects .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0;
     }
 
     .featured-projects .center-button {
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
     }
 }
 
@@ -103,10 +103,10 @@
 
     .featured-projects .projects-grid {
         gap: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
     }
 
     .featured-projects .center-button {
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 }

@@ -8,6 +8,7 @@ const MobileCarousel = ({ images, descriptions }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [modalDescription, setModalDescription] = useState('');
+  const [touchStart, setTouchStart] = useState(null);
   const carouselRef = useRef(null);
 
   // Detect mobile device
@@ -15,7 +16,7 @@ const MobileCarousel = ({ images, descriptions }) => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -27,6 +28,24 @@ const MobileCarousel = ({ images, descriptions }) => {
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 40;
+
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      prevSlide();
+    }
+    setTouchStart(null);
   };
 
   // Keyboard navigation
@@ -75,15 +94,22 @@ const MobileCarousel = ({ images, descriptions }) => {
   return (
     <>
       <div className="mobile-carousel-wrapper">
-        <div className="mobile-carousel" ref={carouselRef}>
-          {/* Left/right arrows - visible on all viewports */}
+        <div
+          className="mobile-carousel"
+          ref={carouselRef}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Left/right arrows - hidden on the smallest screens where swipe takes over */}
           <button
             type="button"
             className="mobile-carousel__nav mobile-carousel__nav--left"
             onClick={(e) => { e.stopPropagation(); prevSlide(); }}
             aria-label="Previous slide"
           >
-            ‹
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
           </button>
           <button
             type="button"
@@ -91,7 +117,9 @@ const MobileCarousel = ({ images, descriptions }) => {
             onClick={(e) => { e.stopPropagation(); nextSlide(); }}
             aria-label="Next slide"
           >
-            ›
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </button>
 
           <ul className="mobile-carousel__list">
