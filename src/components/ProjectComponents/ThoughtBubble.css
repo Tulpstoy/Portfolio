@@ -1,0 +1,116 @@
+.thought-bubble {
+  background: white;
+  border: 1.5px solid var(--ink, #262229);
+  border-radius: 20px;
+  box-shadow: 4px 4px 0 rgba(38, 34, 41, 0.16);
+  padding: 0.85rem 1.25rem;
+  max-width: 260px;
+}
+
+.thought-bubble__text {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ink, #262229);
+  text-align: center;
+}
+
+/* === Desktop: absolute overlay that follows the cursor ===
+   Stays mounted at all times and toggles via opacity/transform so it can
+   pop in AND pop back out smoothly, instead of just vanishing on unmount. */
+.thought-bubble--desktop {
+  position: absolute;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.thought-bubble--desktop.thought-bubble--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.thought-bubble__tail--desktop {
+  position: absolute;
+  left: 14px;
+  top: 100%;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.thought-bubble__tail--desktop .thought-bubble__dot--1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.thought-bubble__tail--desktop .thought-bubble__dot--2 {
+  position: absolute;
+  left: -10px;
+  top: 12px;
+}
+
+.thought-bubble__tail--desktop .thought-bubble__dot--3 {
+  position: absolute;
+  left: -18px;
+  top: 22px;
+}
+
+.thought-bubble__dot {
+  display: block;
+  border-radius: 50%;
+  background: white;
+  border: 1.5px solid var(--ink, #262229);
+}
+
+.thought-bubble__dot--1 { width: 14px; height: 14px; }
+.thought-bubble__dot--2 { width: 10px; height: 10px; }
+.thought-bubble__dot--3 { width: 6px; height: 6px; }
+
+/* === Mobile: plain static caption card, always visible below the carousel === */
+.mobile-caption {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.mobile-caption .thought-bubble {
+  width: 100%;
+  max-width: 560px;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: captionFadeIn 0.25s ease;
+}
+
+@keyframes captionFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .thought-bubble {
+    max-width: 220px;
+    padding: 0.7rem 1rem;
+  }
+
+  .thought-bubble__text {
+    font-size: 0.82rem;
+  }
+
+  .mobile-caption {
+    margin-top: 1.25rem;
+  }
+
+  .mobile-caption .thought-bubble {
+    max-width: 100%;
+    min-height: 68px;
+    padding: 0.75rem 1rem;
+  }
+}

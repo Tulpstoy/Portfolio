@@ -23,26 +23,41 @@ const Home = () => {
             </Helmet>
             <div className="page-container">
                 <section className="hero-section">
+                    <div className="hero-stickers">
+                        <span className="sticker mint">Front-End Dev</span>
+                        <span className="sticker peach">Made Things That Ship</span>
+                        <span className="sticker sky"><span className="live-dot"></span>Open to New Work</span>
+                        <span className="sticker pink">Vancouver, BC</span>
+                    </div>
                     <div className="hero-content">
                         <div className="header-polaroids left-polaroids">
                             <Polaroid id={0} />
                         </div>
                         <div className="hero-text">
-                            <h1 className="page-title">Hi, I'm Micah!</h1>
-                            <h5 className="pronouns">(he/him/his)</h5>
+                            <div className="hero-heading">
+                                <p className="hero-script">hi, my name is</p>
+                                <h1 className="page-title">Micah</h1>
+                                <h5 className="pronouns">(he/him/his)</h5>
+                            </div>
                             <p className="hero-description">
                                 I'm a developer based in Vancouver, BC who loves the web and the people who use it. I'm a quick learner and a team player and I'm always looking for new challenges.
                             </p>
                             <div className="button-group">
-                                <CTA_Button 
-                                    text="Who I Am, Professionally" 
-                                    to="/about" 
+                                <CTA_Button
+                                    text="Who I Am, Professionally"
+                                    to="/about"
                                     variant="primary"
                                 />
-                                <CTA_Button 
-                                    text="Who I Am, Personally" 
-                                    to="/off-the-clock" 
+                                <CTA_Button
+                                    to="/assets/MicahBron_Resume.pdf"
+                                    text="My Resume/CV"
+                                    external
                                     variant="secondary"
+                                    icon={
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                        </svg>
+                                    }
                                 />
                             </div>
                         </div>

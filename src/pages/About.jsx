@@ -4,6 +4,7 @@ import './About.css';
 import profileImage from '../assets/SquarePortrait.jpg';
 import Polaroid from '../components/Building_Blocks/Polaroid';
 import ConnectSection from '../components/ProjectComponents/ConnectSection';
+import CTA_Button from '../components/Building_Blocks/CTA_Button';
 
 const About = () => {
   // Add scroll to top effect at the beginning of the component
@@ -43,6 +44,12 @@ const About = () => {
       </Helmet>
       <div className="about-page">
         <section className="about-hero">
+          <div className="hero-stickers">
+            <span className="sticker mint">Queer &amp; Curious</span>
+            <span className="sticker peach">BCIT Grad, Dec 2025</span>
+            <span className="sticker sky"><span className="live-dot"></span>Open to New Work</span>
+            <span className="sticker pink">Vancouver, BC</span>
+          </div>
           <div className="moodboard-container">
             {/* Header Section */}
             <div className="moodboard-header">
@@ -51,34 +58,35 @@ const About = () => {
                   <Polaroid id={0} />
                 </div>
                 <div className="header-text">
-                  <h1 className="page-title">Hi, I'm Micah!</h1>
-                  <h5 className="pronouns">(he/him/his)</h5>
-                  <p className="page-subtitle">I'm just starting out in the world of web development, but I'm a quick learner and a team player and I'm always looking for new challenges.</p>
-                  <div className="linkedin-blurb">
-                    <a 
-                      href="https://www.linkedin.com/in/micah-bron/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="linkedin-link"
-                    >
-                      <svg className="linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                      Connect with Me Professionally
-                    </a>
+                  <div className="hero-heading">
+                    <p className="hero-script">hi, my name is</p>
+                    <h1 className="page-title">Micah</h1>
+                    <h5 className="pronouns">(he/him/his)</h5>
                   </div>
-                  <div className="resume-blurb">
-                    <a 
-                      href="https://google.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="resume-link"
-                    >
-                      <svg className="resume-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                      </svg>
-                      My Resume/CV
-                    </a>
+                  <p className="page-subtitle">I'm just starting out in the world of web development, but I'm a quick learner and a team player and I'm always looking for new challenges.</p>
+                  <div className="button-group">
+                    <CTA_Button
+                      to="https://www.linkedin.com/in/micah-bron/"
+                      text="Connect with Me Professionally"
+                      external
+                      variant="primary"
+                      icon={
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      }
+                    />
+                    <CTA_Button
+                      to="/assets/MicahBron_Resume.pdf"
+                      text="My Resume/CV"
+                      external
+                      variant="secondary"
+                      icon={
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                      }
+                    />
                   </div>
                 </div>
                 <div className="header-polaroids right-polaroids">

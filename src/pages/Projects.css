@@ -6,20 +6,37 @@
 
 /* Hero Section */
 .projects-hero {
+    position: relative;
     text-align: center;
-    padding: 60px;
-    background: linear-gradient(135deg, rgba(255, 228, 230, 0.25), rgba(255, 241, 235, 0.25));
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 32px;
-    margin: 24px 0 48px 0;
+    padding: 70px 40px 40px;
+    background: white;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px 32px 32px 32px;
+    box-shadow: 6px 6px 0 rgba(38, 34, 41, 0.1);
+    margin: 40px 0 48px 0;
     overflow: visible;
 }
 
+.projects-hero-stickers {
+    position: absolute;
+    top: -18px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.projects-hero-stickers .sticker:nth-child(1) { transform: rotate(-4deg); }
+.projects-hero-stickers .sticker:nth-child(2) { transform: rotate(3deg); }
+
 .projects-hero h1 {
+    font-family: 'Tulpwriting', serif;
     font-size: 5rem;
-    color: #333;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin: 0;
 }
 
@@ -30,55 +47,19 @@
 }
 
 .projects-intro h2 {
+    font-family: 'Tulpwriting', serif;
     font-size: 3rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
-    position: relative;
     text-align: left;
     width: fit-content;
-    color: #333;
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
-    background-size: 300% 300%;
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientShift 3s ease-in-out infinite;
-    padding: 0.5rem 0;
-    border-radius: 8px;
-    position: relative;
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.2;
-}
-
-.projects-intro h2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1), rgba(69, 183, 209, 0.1), rgba(150, 206, 180, 0.1), rgba(254, 202, 87, 0.1));
-    border-radius: 8px;
-    z-index: -1;
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
-.projects-intro h2:hover::before {
-    transform: scale(1.1);
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .projects-intro h5 {
@@ -106,6 +87,10 @@
 @media (max-width: 768px) {
     .page-container {
         padding: 16px;
+    }
+
+    .projects-hero-stickers {
+        display: none;
     }
 
     .projects-hero {

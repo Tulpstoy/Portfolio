@@ -21,6 +21,12 @@ const OffTheClock = () => {
       </Helmet>
       <div className="page-container">
         <section className="hero-section">
+          <div className="hero-stickers">
+            <span className="sticker mint">Writer</span>
+            <span className="sticker peach">Cat Person</span>
+            <span className="sticker sky">Gamer</span>
+            <span className="sticker pink">Storyteller</span>
+          </div>
           <div className="hero-content">
             <div className="header-polaroids left-polaroids">
               <Polaroid id={0} />

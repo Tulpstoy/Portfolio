@@ -9,20 +9,28 @@
   overflow-x: hidden; 
 }
 
+/* On mobile the monitor bezel graphic eats most of the space and leaves the
+   actual video tiny, so it's swapped for a plain bordered video card instead
+   of trying to scale the SVG mockup down. */
 @media (max-width: 768px) {
   .video-display-wrapper {
-    width: 90%;
+    width: 100%;
+    max-width: 480px;
     margin: 2rem auto;
+    display: block;
   }
 
   .studio-frame-svg {
-    width: 100%;
+    display: none;
   }
 
   .video-inside-screen {
-    top: 24.8%;
-    left: 17.5%;
-    width: 65%;
+    position: static;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    border: 1.5px solid var(--ink, #262229);
+    box-shadow: 5px 5px 0 rgba(38, 34, 41, 0.16);
   }
 }
 

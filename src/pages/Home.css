@@ -1,11 +1,53 @@
 /* Hero Section Layout */
 .hero-section {
     position: relative;
-    padding: 4rem 0;
+    padding: 4rem 0 2rem;
     text-align: center;
     background: transparent;
     overflow: visible;
     z-index: 1;
+}
+
+/* Scattered sticker badges above the hero */
+.hero-stickers {
+    position: relative;
+    max-width: 1080px;
+    height: 0;
+    margin: 0 auto;
+    z-index: 3;
+}
+
+.hero-stickers .sticker { position: absolute; }
+.hero-stickers .sticker:nth-child(1) { top: -16px; left: 2%; transform: rotate(-6deg); }
+.hero-stickers .sticker:nth-child(2) { top: -32px; left: 28%; transform: rotate(3deg); }
+.hero-stickers .sticker:nth-child(3) { top: -20px; right: 24%; transform: rotate(-3deg); }
+.hero-stickers .sticker:nth-child(4) { top: -4px; right: 2%; transform: rotate(5deg); }
+
+.hero-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.hero-script {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    margin: 0;
+}
+
+.hero-heading .page-title {
+    font-size: 4.6rem;
+    margin: 0;
+}
+
+.hero-heading .pronouns {
+    margin: 0 !important;
 }
 
 .hero-content {
@@ -42,18 +84,12 @@
 }
 
 .pronouns {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 450;
-    background: linear-gradient(135deg, #FF8C00, #FF0080, #40E0D0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0 !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 0 1.2rem !important;
     line-height: 1;
-    opacity: 0.8;
-    margin-top: -0.5rem !important;
-    transform: translateY(-4rem) !important;
 }
 
 .hero-description {
@@ -110,6 +146,14 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .hero-stickers {
+        display: none;
+    }
+
+    .hero-heading .page-title {
+        font-size: 3rem;
+    }
+
     .hero-content {
         flex-direction: column;
         gap: 2rem;

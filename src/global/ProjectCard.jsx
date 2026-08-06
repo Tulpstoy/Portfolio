@@ -53,29 +53,22 @@ const ProjectCard = ({ project, onTagClick, showTags = true }) => {
   };
 
   return (
-    <div 
-      className={`project-card ${(project.id === 1 || project.id === 2 || project.id === 3 || project.id === 4 || project.id === 5 || project.id === 6) ? 'clickable' : ''}`} 
+    <div
+      className={`project-card ${(project.id === 1 || project.id === 2 || project.id === 3 || project.id === 4 || project.id === 5 || project.id === 6) ? 'clickable' : ''}`}
       onClick={handleClick}
       style={{ cursor: (project.id <= 6) ? 'pointer' : 'default' }}
     >
-      <div className="project-image-container">
-        {project.id <= 6 && imageSrc ? (
-          <img src={imageSrc} alt={project.title} className="project-img" />
-        ) : (
-          <div className="image-placeholder"></div>
-        )}
-      </div>
+      <span className="case-tab">{project.category}</span>
 
       <div className="project-info">
         <h3>{project.title}</h3>
-        <span className="project-category">{project.category}</span>
         <p className="project-description">{project.description}</p>
 
         {showTags && (
           <div className="project-tags">
             {project.tags.map((tag, index) => (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 className="project-tag"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -86,6 +79,15 @@ const ProjectCard = ({ project, onTagClick, showTags = true }) => {
               </span>
             ))}
           </div>
+        )}
+      </div>
+
+      <div className="project-image-container">
+        <span className="tape"></span>
+        {project.id <= 6 && imageSrc ? (
+          <img src={imageSrc} alt={project.title} className="project-img" />
+        ) : (
+          <div className="image-placeholder"></div>
         )}
       </div>
     </div>
