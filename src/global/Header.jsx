@@ -30,7 +30,6 @@ function Header() {
                         <li><Link to="/" onClick={closeMenu}>Home</Link></li>
                         <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
                         <li><Link to="/about" onClick={closeMenu}>About Me</Link></li>
-                        <li><Link to="/off-the-clock" onClick={closeMenu}>Off the Clock</Link></li>
                     </ul>
 
                     <button 

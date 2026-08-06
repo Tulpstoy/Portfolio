@@ -2,8 +2,8 @@
 .polaroid-frame {
     background: white;
     padding: 15px 15px 40px 15px;
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 10px 26px rgba(38, 34, 41, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     animation: none !important;
@@ -15,7 +15,38 @@
 
 .polaroid-frame:hover {
     transform: scale(1.05) rotate(2deg) !important;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 32px rgba(38, 34, 41, 0.24);
+}
+
+/* Washi tape corner accent */
+.polaroid-frame::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    width: 54px;
+    height: 22px;
+    transform: translateX(-50%) rotate(-4deg);
+    background: rgba(255, 224, 130, 0.78);
+    border: 1px solid rgba(38, 34, 41, 0.08);
+    box-shadow: 0 2px 4px rgba(38, 34, 41, 0.14);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.left-polaroids .polaroid-frame::before,
+.header-polaroids.left-polaroids .polaroid-frame::before {
+    left: 10px;
+    transform: rotate(-38deg);
+    background: rgba(201, 239, 223, 0.8);
+}
+
+.right-polaroids .polaroid-frame::before,
+.header-polaroids.right-polaroids .polaroid-frame::before {
+    left: auto;
+    right: 10px;
+    transform: rotate(38deg);
+    background: rgba(203, 231, 255, 0.8);
 }
 
 /* Polaroid Photo Styles */

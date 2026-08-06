@@ -34,6 +34,10 @@ const Projects = () => {
       </Helmet>
       <div className="page-container">
         <section className="projects-hero">
+          <div className="projects-hero-stickers">
+            <span className="sticker mint">Case Files</span>
+            <span className="sticker peach">6 Shipped</span>
+          </div>
           <div className="projects-hero-content">
             <h1>#Projects</h1>
           </div>

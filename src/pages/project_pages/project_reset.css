@@ -12,8 +12,11 @@
 html, body {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  color: #1F2937;
-  background-color: #fff;
+  color: var(--ink, #262229);
+  background:
+      linear-gradient(var(--paper-line, rgba(38,34,41,0.055)) 1px, transparent 1px) 0 0/28px 28px,
+      linear-gradient(90deg, var(--paper-line, rgba(38,34,41,0.055)) 1px, transparent 1px) 0 0/28px 28px,
+      var(--paper, #FAF6EE);
   scroll-behavior: smooth;
 }
 
@@ -46,9 +49,10 @@ a {
 .code-snippets-section h2,
 .features-section h2 {
   text-align: left;
-  font-size: 1.75rem;
+  font-family: 'Tulpwriting', serif;
+  font-size: 1.9rem;
   margin-bottom: 1rem;
-  color: #111827;
+  color: var(--ink, #262229);
 }
 
 /* Image responsiveness */

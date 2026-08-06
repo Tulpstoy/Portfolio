@@ -43,8 +43,9 @@
   width: 4.25rem;
   height: 4.25rem;
   border-radius: 9999px;
-  background: linear-gradient(145deg, #fff1f2, #f8fafc);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: var(--tape-peach, #FFE0AC);
+  border: 1.5px solid var(--ink, #262229);
+  box-shadow: 3px 3px 0 rgba(38, 34, 41, 0.14);
   padding: 0.5rem;
   flex-shrink: 0;
   line-height: 1;
@@ -52,12 +53,12 @@
 
 /* Subtitle next to emoji */
 .project-category {
-  color: #111827;
+  color: var(--ink-soft, #6b6270);
   font-size: 1.25rem;
-  font-weight: 350;
+  font-weight: 500;
   margin: 0;
   letter-spacing: 0.2px;
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
   line-height: 1.3;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -65,7 +66,8 @@
 
 /* Gradient title effect */
 .gradient-text {
-  background: linear-gradient(135deg, #e31837, #ffc107);
+  font-family: 'Tulpwriting', serif;
+  background: linear-gradient(135deg, #FF8C00, #FF0080, #40E0D0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -80,38 +82,52 @@
 }
 
 .project-skills-heading {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #333;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft, #6b6270);
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .project-skills-card {
-  background: #f8f8f8;
-  border-radius: 1rem;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  max-width: 640px;
+  background: transparent;
+  padding: 0;
+  max-width: 720px;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .project-skill-tag {
-  background-color: #e5e7eb;
-  color: #374151;
+  background-color: var(--tape-mint, #C9EFDF);
+  color: var(--ink, #262229);
   padding: 6px 14px;
   border-radius: 9999px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5);
-  transition: background-color 0.2s ease;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  border: 1.5px solid var(--ink, #262229);
+  box-shadow: 2px 2px 0 rgba(38, 34, 41, 0.14);
+  transition: transform 0.15s ease;
 }
 
-/* Project buttons with gradient hover */
+.project-skill-tag:nth-child(5n+2) { background: var(--tape-pink, #FFD2E6); }
+.project-skill-tag:nth-child(5n+3) { background: var(--tape-peach, #FFE0AC); }
+.project-skill-tag:nth-child(5n+4) { background: var(--tape-sky, #CBE7FF); }
+.project-skill-tag:nth-child(5n+5) { background: var(--tape-lilac, #E7D6FF); }
+
+.project-skill-tag:hover {
+  transform: translate(-2px, -2px);
+}
+
+/* Project buttons - sticker style */
 .project-actions {
   display: flex;
   gap: 16px;
@@ -121,52 +137,35 @@
 }
 
 .project-actions a {
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.4s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f2f2f2;
-  color: #333;
-  border: 1px solid #ccc;
+  background: white;
+  color: var(--ink, #262229);
+  border: 1.5px solid var(--ink, #262229);
+  box-shadow: 3px 3px 0 rgba(38, 34, 41, 0.16);
   position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.project-actions a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #FF8C00, #FF0080, #40E0D0);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: -1;
-}
-
-.project-actions a:hover::before {
-  opacity: 1;
 }
 
 .project-actions a:hover {
-  color: white;
-  border-color: transparent;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(38, 34, 41, 0.2);
 }
 
-/* Figma button specific styling */
-.project-actions a.figma {
-  background: #f2f2f2;
-  color: #333;
+.project-actions a.live-demo {
+  background: var(--ink, #262229);
+  color: white;
+  box-shadow: 3px 3px 0 rgba(255, 140, 0, 0.4);
 }
 
-.project-actions a.figma:hover {
-  color: white;
+.project-actions a.live-demo:hover {
+  box-shadow: 5px 5px 0 rgba(255, 140, 0, 0.5);
 }
 
 /* Responsive: pleasant emoji + title layout on mobile */

@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './CTA_Button.css';
 
-const CTA_Button = ({ 
-    to, 
-    text, 
-    icon, 
-    onClick, 
+const CTA_Button = ({
+    to,
+    text,
+    icon,
+    onClick,
     external = false,
+    variant = "secondary",
     className = ""
 }) => {
     const buttonContent = (
@@ -17,13 +18,15 @@ const CTA_Button = ({
         </>
     );
 
+    const classes = `cta-button ${variant} ${className}`.trim();
+
     if (external) {
         return (
-            <a 
-                href={to} 
-                target="_blank" 
+            <a
+                href={to}
+                target="_blank"
                 rel="noopener noreferrer"
-                className={`cta-button ${className}`}
+                className={classes}
                 onClick={onClick}
             >
                 {buttonContent}
@@ -32,9 +35,9 @@ const CTA_Button = ({
     }
 
     return (
-        <Link 
-            to={to} 
-            className={`cta-button ${className}`}
+        <Link
+            to={to}
+            className={classes}
             onClick={onClick}
         >
             {buttonContent}
