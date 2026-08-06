@@ -17,7 +17,7 @@ const ThoughtBubble = ({ text, containerRef, mouseX, mouseY, isHovering }) => {
     }
   }, [text, isHovering]);
 
-  if (!text || !isHovering) return null;
+  if (!text) return null;
 
   const container = containerRef?.current?.getBoundingClientRect();
   const containerWidth = container?.width || 0;
@@ -32,7 +32,7 @@ const ThoughtBubble = ({ text, containerRef, mouseX, mouseY, isHovering }) => {
   return (
     <div
       ref={bubbleRef}
-      className="thought-bubble thought-bubble--desktop"
+      className={`thought-bubble thought-bubble--desktop ${isHovering ? 'thought-bubble--visible' : ''}`}
       style={{ left: `${left}px`, top: `${top}px` }}
     >
       <p className="thought-bubble__text">{text}</p>

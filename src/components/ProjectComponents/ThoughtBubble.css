@@ -16,12 +16,21 @@
   text-align: center;
 }
 
-/* === Desktop: absolute overlay that follows the cursor === */
+/* === Desktop: absolute overlay that follows the cursor ===
+   Stays mounted at all times and toggles via opacity/transform so it can
+   pop in AND pop back out smoothly, instead of just vanishing on unmount. */
 .thought-bubble--desktop {
   position: absolute;
   z-index: 30;
   pointer-events: none;
-  animation: bubblePop 0.15s ease-out;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.thought-bubble--desktop.thought-bubble--visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .thought-bubble__tail--desktop {
@@ -61,11 +70,6 @@
 .thought-bubble__dot--1 { width: 14px; height: 14px; }
 .thought-bubble__dot--2 { width: 10px; height: 10px; }
 .thought-bubble__dot--3 { width: 6px; height: 6px; }
-
-@keyframes bubblePop {
-  from { opacity: 0; transform: scale(0.85); }
-  to { opacity: 1; transform: scale(1); }
-}
 
 /* === Mobile: plain static caption card, always visible below the carousel === */
 .mobile-caption {

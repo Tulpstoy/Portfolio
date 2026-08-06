@@ -12,7 +12,6 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [modalDescription, setModalDescription] = useState('');
-  const [isHovering, setIsHovering] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
@@ -24,6 +23,14 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
     const rect = carouselRef.current.getBoundingClientRect();
     setMouseX(e.clientX - rect.left);
     setMouseY(e.clientY - rect.top);
+
+    // The carousel container's own box is wider than the visible cards (to
+    // make room for the peek layout), so moving over blank space inside it
+    // never fires a mouseleave on the card itself. Actively check what's
+    // under the cursor and clear the hover state if it's not a card.
+    if (!e.target.closest('.card-container')) {
+      setHoveredIndex(null);
+    }
   };
 
   const openModal = (image, description) => {
@@ -118,7 +125,19 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
         '--drag-offset': isDragging ? dragOffset : 0,
       };
     }
-    // Desktop: stacked style (same as mobile carousel) — use data-pos for CSS
+
+    // Desktop: pos -1/0/1 are handled entirely by CSS (data-pos selectors) for
+    // the crisp 3-card peek. Anything further out gets an inline transform
+    // that parks it off-screen, so sliding into/out of the peek animates from
+    // off-screen instead of popping in from the center.
+    const pos = getPosition(index);
+    if (Math.abs(pos) >= 2) {
+      const direction = Math.sign(pos);
+      return {
+        transform: `translateX(${direction * 160}%) scale(0.65)`,
+        opacity: 0,
+      };
+    }
     return {};
   };
 
@@ -142,8 +161,7 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           onMouseMove={handleMouseMove}
-          onMouseEnter={() => !isMobile && setIsHovering(true)}
-          onMouseLeave={() => { setIsHovering(false); setHoveredIndex(null); }}
+          onMouseLeave={() => setHoveredIndex(null)}
         >
           {images.map((img, index) => (
             <div
@@ -152,6 +170,7 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
               style={getStyleVars(index)}
               data-pos={isMobile ? undefined : getPosition(index)}
               onMouseEnter={() => !isMobile && setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex((prev) => (prev === index ? null : prev))}
             >
               <div className="card">
                 <img
@@ -189,23 +208,21 @@ const ProjectImageCarousel = ({ images, descriptions }) => {
               containerRef={carouselRef}
               mouseX={mouseX}
               mouseY={mouseY}
-              isHovering={isHovering}
+              isHovering={hoveredIndex !== null}
             />
           )}
         </div>
 
-        {/* Mobile indicators */}
-        {isMobile && (
-          <div className="mobile-indicators">
-            {images.map((_, index) => (
-              <div
-                key={index}
-                className={`indicator ${index === active ? 'active' : ''}`}
-                onClick={() => setActive(index)}
-              />
-            ))}
-          </div>
-        )}
+        {/* Dot indicators - shown in both mobile and desktop views */}
+        <div className="mobile-indicators">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`indicator ${index === active ? 'active' : ''}`}
+              onClick={() => setActive(index)}
+            />
+          ))}
+        </div>
 
         {/* Static caption on mobile - no hover to trigger the desktop bubble */}
         {isMobile && (

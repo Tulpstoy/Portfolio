@@ -10,7 +10,6 @@ const MobileCarousel = ({ images, descriptions }) => {
   const [modalImage, setModalImage] = useState(null);
   const [modalDescription, setModalDescription] = useState('');
   const [touchStart, setTouchStart] = useState(null);
-  const [isHovering, setIsHovering] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
@@ -58,6 +57,14 @@ const MobileCarousel = ({ images, descriptions }) => {
     const rect = carouselRef.current.getBoundingClientRect();
     setMouseX(e.clientX - rect.left);
     setMouseY(e.clientY - rect.top);
+
+    // The carousel container's own box is wider than the visible cards (to
+    // make room for the peek layout), so moving over blank space inside it
+    // never fires a mouseleave on the card itself. Actively check what's
+    // under the cursor and clear the hover state if it's not a card.
+    if (!e.target.closest('.mobile-carousel__item')) {
+      setHoveredIndex(null);
+    }
   };
 
   // Keyboard navigation
@@ -89,6 +96,19 @@ const MobileCarousel = ({ images, descriptions }) => {
     return diff;
   };
 
+  // pos -1/0/1 are handled entirely by CSS (data-pos selectors) for the
+  // crisp 3-card peek. Anything further out gets an inline transform that
+  // parks it off-screen, so sliding into/out of the peek animates from
+  // off-screen instead of popping in from the center.
+  const getItemStyle = (position) => {
+    if (isMobile || Math.abs(position) < 2) return undefined;
+    const direction = Math.sign(position);
+    return {
+      transform: `translateX(${direction * 160}%) scale(0.65)`,
+      opacity: 0,
+    };
+  };
+
   const openModal = (image, description) => {
     setModalImage(image);
     setModalDescription(description);
@@ -112,8 +132,7 @@ const MobileCarousel = ({ images, descriptions }) => {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
           onMouseMove={handleMouseMove}
-          onMouseEnter={() => !isMobile && setIsHovering(true)}
-          onMouseLeave={() => { setIsHovering(false); setHoveredIndex(null); }}
+          onMouseLeave={() => setHoveredIndex(null)}
         >
           {/* Left/right arrows - hidden on the smallest screens where swipe takes over */}
           <button
@@ -145,8 +164,10 @@ const MobileCarousel = ({ images, descriptions }) => {
                   key={index}
                   className="mobile-carousel__item"
                   data-pos={position}
+                  style={getItemStyle(position)}
                   onClick={() => setActiveIndex(index)}
                   onMouseEnter={() => !isMobile && setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex((prev) => (prev === index ? null : prev))}
                 >
                   <img 
                     src={image} 
@@ -168,23 +189,21 @@ const MobileCarousel = ({ images, descriptions }) => {
               containerRef={carouselRef}
               mouseX={mouseX}
               mouseY={mouseY}
-              isHovering={isHovering}
+              isHovering={hoveredIndex !== null}
             />
           )}
         </div>
 
-        {/* Dot indicators */}
-        {isMobile && (
-          <div className="mobile-carousel__indicators">
-            {images.map((_, index) => (
-              <div
-                key={index}
-                className={`mobile-carousel__indicator ${index === activeIndex ? 'mobile-carousel__indicator--active' : ''}`}
-                onClick={() => setActiveIndex(index)}
-              />
-            ))}
-          </div>
-        )}
+        {/* Dot indicators - shown in both mobile and desktop views */}
+        <div className="mobile-carousel__indicators">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`mobile-carousel__indicator ${index === activeIndex ? 'mobile-carousel__indicator--active' : ''}`}
+              onClick={() => setActiveIndex(index)}
+            />
+          ))}
+        </div>
 
         {/* Static caption on mobile - no hover to trigger the desktop bubble */}
         {isMobile && (
